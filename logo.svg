@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 940 200" role="img" aria-label="Veteran Drywall LLC logo">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8BC55"/>
+      <stop offset="1" stop-color="#C4901E"/>
+    </linearGradient>
+    <clipPath id="flagClip">
+      <path d="M14 32 L70 24 L128 31 L196 22 L262 30 L330 21 L398 29 L456 22 L506 30
+               L497 62 L508 96 L496 130 L507 164 L495 198 L506 232 L494 262
+               L440 256 L372 264 L304 255 L236 263 L168 254 L100 262 L38 255 L12 262
+               L20 226 L10 192 L21 158 L11 124 L22 90 L12 58 Z"/>
+    </clipPath>
+    <path id="star" d="M0,-5.2 L1.55,-1.65 L5.2,-1.65 L2.3,0.8 L3.2,4.4 L0,2.2 L-3.2,4.4 L-2.3,0.8 L-5.2,-1.65 L-1.55,-1.65 Z" fill="url(#gold)"/>
+  </defs>
+
+  <!-- ===== FLAG MARK (scaled) ===== -->
+  <g transform="translate(8,10) scale(0.64)">
+    <g clip-path="url(#flagClip)">
+      <rect x="0" y="0" width="520" height="280" fill="#15181D"/>
+      <g fill="url(#gold)">
+        <rect x="0" y="21"  width="520" height="18.5"/>
+        <rect x="0" y="58"  width="520" height="18.5"/>
+        <rect x="0" y="95"  width="520" height="18.5"/>
+        <rect x="0" y="132" width="520" height="18.5"/>
+        <rect x="0" y="169" width="520" height="18.5"/>
+        <rect x="0" y="206" width="520" height="18.5"/>
+        <rect x="0" y="243" width="520" height="18.5"/>
+      </g>
+      <g fill="#15181D" opacity="0.85">
+        <rect x="252" y="26" width="46" height="3.5" rx="2"/>
+        <rect x="330" y="64" width="60" height="3" rx="2"/>
+        <rect x="420" y="100" width="52" height="3.5" rx="2"/>
+        <rect x="210" y="140" width="40" height="3" rx="2"/>
+        <rect x="360" y="176" width="66" height="3.5" rx="2"/>
+        <rect x="260" y="212" width="48" height="3" rx="2"/>
+        <rect x="120" y="248" width="56" height="3.5" rx="2"/>
+        <rect x="440" y="212" width="40" height="3" rx="2"/>
+      </g>
+      <rect x="0" y="0" width="192" height="150" fill="#15181D"/>
+      <g>
+        <use xlink:href="#star" x="24"  y="22"/><use xlink:href="#star" x="60"  y="22"/><use xlink:href="#star" x="96"  y="22"/><use xlink:href="#star" x="132" y="22"/><use xlink:href="#star" x="168" y="22"/>
+        <use xlink:href="#star" x="42"  y="47"/><use xlink:href="#star" x="78"  y="47"/><use xlink:href="#star" x="114" y="47"/><use xlink:href="#star" x="150" y="47"/>
+        <use xlink:href="#star" x="24"  y="72"/><use xlink:href="#star" x="60"  y="72"/><use xlink:href="#star" x="96"  y="72"/><use xlink:href="#star" x="132" y="72"/><use xlink:href="#star" x="168" y="72"/>
+        <use xlink:href="#star" x="42"  y="97"/><use xlink:href="#star" x="78"  y="97"/><use xlink:href="#star" x="114" y="97"/><use xlink:href="#star" x="150" y="97"/>
+        <use xlink:href="#star" x="24"  y="122"/><use xlink:href="#star" x="60"  y="122"/><use xlink:href="#star" x="96"  y="122"/><use xlink:href="#star" x="132" y="122"/><use xlink:href="#star" x="168" y="122"/>
+      </g>
+    </g>
+    <!-- battlefield cross -->
+    <rect x="356" y="38" width="26" height="196" fill="#0B0D10"/>
+    <rect x="312" y="84" width="114" height="26" fill="#0B0D10"/>
+    <text x="369" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#E8BC55">JOHN 15:13</text>
+    <!-- kneeling soldier -->
+    <g fill="#0B0D10" transform="translate(192,94)">
+      <circle cx="80" cy="30" r="12"/>
+      <path d="M64 26 Q80 8 96 26 L96 32 L64 32 Z"/>
+      <path d="M64 38 C56 54 55 72 58 92 L86 92 C84 72 86 56 93 44 C85 36 72 34 64 38 Z"/>
+      <path d="M76 48 L102 74 L97 84 L70 60 Z"/>
+      <path d="M58 88 L100 84 L106 94 L94 96 L94 130 L110 140 L80 140 L80 98 L58 98 Z"/>
+      <path d="M62 92 L70 102 L56 126 L14 126 L14 140 L62 140 L74 104 Z"/>
+    </g>
+  </g>
+
+  <!-- ===== WORDMARK ===== -->
+  <g font-family="Arial Black, Arial, sans-serif">
+    <text x="360" y="92" font-size="56" font-weight="900" fill="#F5F2EA" textLength="270" lengthAdjust="spacingAndGlyphs">VETERAN</text>
+    <text x="650" y="92" font-size="56" font-weight="900" fill="url(#gold)" textLength="270" lengthAdjust="spacingAndGlyphs">DRYWALL</text>
+    <line x1="363" y1="112" x2="920" y2="112" stroke="#3A3F47" stroke-width="2"/>
+    <text x="363" y="140" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#9AA1AB">USMC VETERAN OWNED &#38; OPERATED</text>
+    <text x="363" y="168" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="url(#gold)">FREE ESTIMATES &#183; LIC # SCC131152687</text>
+  </g>
+</svg>
