@@ -1,0 +1,28 @@
+# Veteran Drywall — Netlify configuration
+# Static site: no build step. Publish the repo root.
+
+[build]
+  publish = "."
+
+# Security & caching headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Redirect Netlify subdomain / www consistency is configured in the Netlify UI
+# (Domain settings) after connecting veterandrywall.net.
+
+# FUTURE — AI chatbot backend (Option B in README-DEPLOY.md):
+# [functions]
+#   directory = "netlify/functions"
+# Store the API key as env var OPENAI_API_KEY (or ANTHROPIC_API_KEY) in
+# Netlify UI → Site settings → Environment variables. Never in client JS.
