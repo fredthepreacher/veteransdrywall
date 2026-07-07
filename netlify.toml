@@ -19,7 +19,9 @@
     Cache-Control = "public, max-age=604800"
 
 # Redirect Netlify subdomain / www consistency is configured in the Netlify UI
-# (Domain settings) after connecting veterandrywall.net.
+# (Domain settings) after connecting veteransdrywall.net.
+# Current temporary Netlify URL: https://veteransdrywall.netlify.app/
+# Production domain (final, after client payment): https://veteransdrywall.net
 
 # FUTURE — AI chatbot backend (Option B in README-DEPLOY.md):
 # [functions]
