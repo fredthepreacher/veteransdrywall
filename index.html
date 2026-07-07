@@ -9,7 +9,7 @@
 <meta property="og:description" content="Military-grade craftsmanship: drywall repair, texture matching, water damage, stucco, paint &amp; trim. Free quotes. (941) 527-5924.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://veteransdrywall.net">
-<meta property="og:image" content="https://veteransdrywall.net/assets/images/veteran-drywall-social-preview.jpg">
+<meta property="og:image" content="https://veteransdrywall.net/assets/images/webp/veteran-drywall-crew-og-1200x630.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,15 +18,16 @@
 <link rel="canonical" href="https://veteransdrywall.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://static.wixstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/veteran-drywall-icon-192.png">
 <link rel="apple-touch-icon" href="assets/images/veteran-drywall-icon-512.png">
 <link rel="alternate icon" href="favicon.svg">
-<!-- Hero image preloaded + rendered eagerly (not lazy-loaded) since it's the LCP element.
-     TODO (owner/dev): once self-hosted, point this at /assets/images/north-port-drywall-repair-hero.avif (or .webp) instead. -->
-<link rel="preload" as="image" fetchpriority="high" href="https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg">
+<!-- Hero image preloaded + rendered eagerly (not lazy-loaded) since it's the LCP element. Fully self-hosted. -->
+<link rel="preload" as="image" fetchpriority="high" imagesrcset="assets/images/webp/veteran-drywall-crew-mobile-900x1200.webp 900w, assets/images/webp/veteran-drywall-crew-hero.webp 1901w" imagesizes="100vw" href="assets/images/webp/veteran-drywall-crew-hero.webp">
 
+<!-- TODO (owner): once a Google Business Profile link is provided, add it as a second entry in the
+     "sameAs" array below, add a matching link in the Reviews section and footer, and confirm the
+     NAP (name/address/phone) here matches the GBP listing exactly. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,7 +84,9 @@
     {"@type":"Question","name":"How long does a typical drywall repair take?","acceptedAnswer":{"@type":"Answer","text":"Most small-to-medium repairs take one to three visits because joint compound needs drying time between coats. We'll give you a realistic timeline in your estimate."}},
     {"@type":"Question","name":"What should I send for a quote?","acceptedAnswer":{"@type":"Answer","text":"A few photos of the damage or the space, rough dimensions if you have them, and your city. That's usually enough for an accurate estimate."}},
     {"@type":"Question","name":"What areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We serve North Port, Port Charlotte, Venice, Sarasota, Englewood and Punta Gorda, covering Sarasota and Charlotte County, Florida."}},
-    {"@type":"Question","name":"Do you work with landlords, realtors and property managers?","acceptedAnswer":{"@type":"Answer","text":"Yes — alongside homeowners we regularly help landlords, realtors and property managers get walls and ceilings move-in ready."}}
+    {"@type":"Question","name":"Do you work with landlords, realtors and property managers?","acceptedAnswer":{"@type":"Answer","text":"Yes — alongside homeowners we regularly help landlords, realtors and property managers get walls and ceilings move-in ready."}},
+    {"@type":"Question","name":"Do you repair water-damaged drywall?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once the source of the leak is fixed and the area is safe and dry, we repair and refinish damaged drywall and ceilings."}},
+    {"@type":"Question","name":"How do I get the fastest quote?","acceptedAnswer":{"@type":"Answer","text":"Call the primary line at (941) 527-5924 or submit the quote form with your city, service needed, project details, and 2-3 photos if available."}}
   ]
 }
 </script>
@@ -161,7 +164,8 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 /* ---------- Hero ---------- */
 .hero{position:relative;background:var(--ink);color:var(--paper);padding:0;overflow:hidden}
 .hero-media{position:absolute;inset:0;z-index:0}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+@media(max-width:760px){.hero-media img{object-position:center 22%}}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(12,14,18,.94) 0%,rgba(12,14,18,.82) 45%,rgba(12,14,18,.45) 100%)}
 .hero-inner{position:relative;z-index:2;padding:clamp(88px,11vw,132px) 0 clamp(72px,9vw,112px);max-width:920px}
 .hero h1{font-size:clamp(40px,5.2vw,68px);font-weight:700;color:var(--paper);text-shadow:0 4px 22px rgba(0,0,0,.45);max-width:980px;text-wrap:balance}
@@ -282,16 +286,18 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .why .verse{border-left:3px solid var(--gold);padding:14px 20px;background:rgba(232,188,85,.06);font-style:italic;color:var(--gold-2);border-radius:0 8px 8px 0;margin:24px 0}
 .why .verse small{display:block;font-style:normal;font-family:var(--head);letter-spacing:3px;margin-top:6px;color:rgba(245,242,234,.6)}
 .why-photo{position:relative}
-.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;object-fit:cover;width:100%}
+.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;object-fit:cover;object-position:center 15%;width:100%}
 .why-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--gold);border-radius:var(--radius);z-index:-1;opacity:.5}
-@media(max-width:860px){.why-grid{grid-template-columns:1fr}.why-photo{max-width:420px}}
+@media(max-width:700px){.why-grid{grid-template-columns:1fr}.why-photo{max-width:420px;margin:0 auto}}
 
 /* ---------- Team ---------- */
 .team{background:var(--ink);color:var(--paper);border-top:1px solid rgba(245,242,234,.1)}
 .team h2{color:var(--paper)}
 .team .grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:900px}
+@media(min-width:481px) and (max-width:1024px){.team .grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(max-width:480px){.team .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
 .member{text-align:center}
-.member img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s ease}
+.member img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 12%;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s ease}
 .member:hover img{transform:scale(1.03)}
 .member h3{font-size:26px;margin:14px 0 2px;color:var(--paper)}
 .member span{font-family:var(--head);font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2)}
@@ -350,7 +356,7 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .pm-card p{color:rgba(245,242,234,.82);margin-bottom:18px;font-size:15px}
 .pm .aeo-answer{background:rgba(232,188,85,.08);color:rgba(245,242,234,.9)}
 .pm .aeo-answer strong{color:var(--gold-2)}
-@media(max-width:860px){.pm-grid{grid-template-columns:1fr}.pm ul{grid-template-columns:1fr}}
+@media(max-width:700px){.pm-grid{grid-template-columns:1fr}.pm ul{grid-template-columns:1fr}}
 
 /* ---------- Reviews CTA ---------- */
 .reviews{background:var(--ink);color:var(--paper);text-align:center}
@@ -358,6 +364,14 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .reviews p{color:rgba(245,242,234,.8);max-width:560px;margin:0 auto 26px}
 .reviews .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 .g-placeholder{margin:26px auto 0;padding:16px 20px;border:1px dashed rgba(245,242,234,.35);border-radius:10px;font-size:13.5px;color:rgba(245,242,234,.65);max-width:520px}
+
+/* ---------- Fast Answers (compact AEO hub, placed right before FAQ) ---------- */
+.fast-answers{background:var(--paper);border-top:1px solid var(--line)}
+.fast-answers .grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.fa-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;transition:transform .18s ease,box-shadow .18s ease}
+.fa-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.fa-card h3{font-size:16.5px;text-transform:none;letter-spacing:0;font-family:var(--body);font-weight:700;color:var(--ink);margin-bottom:8px}
+.fa-card p{font-size:14.5px;color:rgba(21,24,29,.72)}
 
 /* ---------- FAQ ---------- */
 .faq{background:var(--paper-2);border-top:1px solid var(--line)}
@@ -399,7 +413,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
 form .btn{width:100%;justify-content:center;margin-top:22px}
 .form-note{font-size:12.5px;color:rgba(21,24,29,.55);margin-top:12px;text-align:center}
 .form-reassure{font-size:13.5px;color:rgba(21,24,29,.6);margin-top:16px;text-align:center;font-style:italic}
-@media(max-width:860px){.quote-grid{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}}
+@media(max-width:700px){.quote-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.f-row{grid-template-columns:1fr}}
 
 /* ---------- Footer ---------- */
 footer{background:var(--ink-2);color:rgba(245,242,234,.75);padding:54px 0 110px}
@@ -475,10 +490,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <!-- Hero logo panel removed intentionally: the official logo lives in the sticky header and the brand banner below so the crew photo stays visible. -->
 <section class="hero" aria-label="Intro">
   <div class="hero-media" aria-hidden="true">
+    <!-- Fully self-hosted crew photo. Mobile gets a real hand-cropped portrait version (all three
+         crew members fully visible, heads/hats intact) instead of a squeezed desktop crop. -->
     <picture>
-      <source type="image/avif" srcset="https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg">
-      <!-- TODO (owner/dev): swap for /assets/images/north-port-drywall-repair-hero.webp + .avif once self-hosted -->
-      <img src="https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg" alt="" width="1600" height="1000" fetchpriority="high" decoding="async">
+      <source media="(max-width:760px)" type="image/webp" srcset="assets/images/webp/veteran-drywall-crew-mobile-900x1200.webp">
+      <source media="(max-width:760px)" type="image/jpeg" srcset="assets/images/jpg-fallbacks/veteran-drywall-crew-hero.jpg">
+      <source type="image/webp" srcset="assets/images/webp/veteran-drywall-crew-hero.webp">
+      <img src="assets/images/jpg-fallbacks/veteran-drywall-crew-hero.jpg" alt="Veteran Drywall crew standing outdoors in North Port Florida" width="1901" height="1053" fetchpriority="high" decoding="async">
     </picture>
   </div>
   <div class="hero-overlay" role="presentation"></div>
@@ -653,8 +671,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="verse">"Greater love hath no man than this, that a man lay down his life for his friends."<small>JOHN 15:13</small></div>
     </div>
     <div class="why-photo reveal">
-      <!-- Photo hotlinked from Wix CDN — self-host before cancelling Wix (see PROJECT-NOTES.md) -->
-      <img src="https://static.wixstatic.com/media/e64608_6b4a976732a4444083bcff38d09b3f2d~mv2.jpeg/v1/crop/x_31,y_0,w_976,h_1464/fill/w_600,h_900,al_c,q_85,enc_avif,quality_auto/IMG_2958.jpeg" alt="Steven McPherson, USMC veteran and owner of Veteran Drywall" loading="lazy" width="600" height="750">
+      <picture>
+        <source type="image/webp" srcset="assets/images/webp/steven-mcpherson-veteran-drywall-owner.webp">
+        <img src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg" alt="Steven McPherson, USMC veteran and owner of Veteran Drywall" loading="lazy" width="490" height="450">
+      </picture>
     </div>
   </div>
   <!-- Official flyer/badge mark folded in here as a small trust strip instead of its own full-width section -->
@@ -683,6 +703,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="hero-cta" style="margin-top:34px">
       <a class="btn btn-gold" href="#quote">Request a Free Quote</a>
       <a class="btn" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VETERAN STORY ================= -->
+<section class="why" id="veteran-story" style="border-top:1px solid var(--line)">
+  <div class="wrap why-grid">
+    <div class="why-photo reveal" style="order:2">
+      <picture>
+        <source type="image/webp" srcset="assets/images/webp/usmc-veteran-service-photo-american-flag.webp">
+        <img src="assets/images/jpg-fallbacks/usmc-veteran-service-photo-american-flag.jpg" alt="United States Marine Corps service photo with American flag" loading="lazy" width="574" height="416">
+      </picture>
+    </div>
+    <div>
+      <span class="kicker">Before Drywall</span>
+      <h2>Built on Service. Finished With Discipline.</h2>
+      <p>Before Veteran Drywall, Steven McPherson served over a decade in the United States Marine Corps across four overseas deployments. That background is where the standard comes from — attention to detail, showing up when you say you will, and finishing the job right the first time.</p>
+      <p>That same discipline is what our crew brings to every drywall repair, texture match, and remodel across North Port, Port Charlotte and Charlotte County.</p>
     </div>
   </div>
 </section>
@@ -718,10 +756,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <button class="gfilter" type="button" data-filter="stucco">Stucco</button>
       <button class="gfilter" type="button" data-filter="painting">Painting</button>
       <button class="gfilter" type="button" data-filter="remodels">Remodels</button>
+      <button class="gfilter" type="button" data-filter="crew">Crew at Work</button>
     </div>
-    <!-- Photos hotlinked from Wix CDN — TODO (owner/dev): download originals and self-host in /assets/images before cancelling Wix.
-         Automated download was not possible from this session (sandbox network is allowlisted and blocks the Wix CDN + Netlify domains) — export the media library from Wix or resave the originals locally, then swap these src values for local paths (see self-host-images.sh). -->
+    <!-- 4 photos below are fully self-hosted from /assets/images/gallery-square-webp/ (new image package).
+         The remaining photos further down are still hotlinked from Wix CDN — TODO (owner/dev): download
+         originals and self-host in /assets/images before cancelling Wix. Automated download was not
+         possible from this session (sandbox network is allowlisted and blocks the Wix CDN + Netlify
+         domains) — export the media library from Wix or resave the originals locally, then swap these
+         src values for local paths (see self-host-images.sh). -->
     <div class="grid" id="galleryGrid">
+      <figure class="reveal" data-cat="crew"><span class="gcat">Crew at Work</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/veteran-drywall-crew-hero-square-900.webp"><img loading="lazy" width="960" height="960" alt="Veteran Drywall crew standing outdoors in North Port Florida" src="assets/images/jpg-fallbacks/veteran-drywall-crew-hero.jpg"></picture><figcaption>Our crew — North Port, FL</figcaption></figure>
+      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/drywall-window-scaffold-finishing-project-square-900.webp"><img loading="lazy" width="960" height="960" alt="Drywall finishing work around large arched window with scaffold" src="assets/images/jpg-fallbacks/drywall-window-scaffold-finishing-project.jpg"></picture><figcaption>Drywall finishing around a window opening</figcaption></figure>
+      <figure class="reveal" data-cat="painting"><span class="gcat">Painting</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/interior-painting-drywall-finishing-square-900.webp"><img loading="lazy" width="960" height="960" alt="Interior painting and drywall finishing project" src="assets/images/jpg-fallbacks/interior-painting-drywall-finishing.jpg"></picture><figcaption>Paint &amp; finish work</figcaption></figure>
+      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/interior-remodel-framing-prep-square-900.webp"><img loading="lazy" width="960" height="960" alt="Interior remodel with wall framing and preparation" src="assets/images/jpg-fallbacks/interior-remodel-framing-prep.jpg"></picture><figcaption>Remodel framing &amp; prep</figcaption></figure>
       <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="Drywall patch repair, finished and sanded smooth — North Port area project" src="https://static.wixstatic.com/media/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg"><figcaption>Drywall repair — patched &amp; finished</figcaption></figure>
       <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Drywall texture finishing work matched to surrounding wall" src="https://static.wixstatic.com/media/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg"><figcaption>Drywall finishing work</figcaption></figure>
       <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Close-up of matched wall texture after drywall repair" src="https://static.wixstatic.com/media/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png"><figcaption>Texture matching detail</figcaption></figure>
@@ -767,19 +814,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <section class="team" id="team">
   <div class="wrap">
     <span class="kicker">The Crew</span>
-    <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Meet the Team</h2>
+    <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Meet the Veteran Drywall Team</h2>
     <div class="grid">
       <div class="member reveal">
-        <img loading="lazy" width="450" height="600" alt="Steven — Owner, USMC Veteran" src="https://static.wixstatic.com/media/e64608_87fe072f45714232a885f0d9cbcc2f9b~mv2.jpg/v1/crop/x_286,y_333,w_968,h_1346/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A0926-Enhanced-NR-2.jpg">
-        <h3>Steven</h3><span>Owner · USMC Veteran</span>
+        <picture>
+          <source type="image/webp" srcset="assets/images/team-portraits-webp/steven-mcpherson-owner-portrait-600x800.webp">
+          <img loading="lazy" width="600" height="800" alt="Steven McPherson owner of Veteran Drywall" src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg">
+        </picture>
+        <h3>Steven McPherson</h3><span>Owner · USMC Veteran</span>
       </div>
       <div class="member reveal">
-        <img loading="lazy" width="450" height="600" alt="Mike — Drywall specialist" src="https://static.wixstatic.com/media/e64608_de52f63f0c9a4f7a9e53040ad5f8eec5~mv2.jpg/v1/crop/x_130,y_288,w_1074,h_1140/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A0996-Enhanced-NR-2.jpg">
-        <h3>Mike</h3><span>Finisher</span>
+        <picture>
+          <source type="image/webp" srcset="assets/images/team-portraits-webp/mike-veteran-drywall-team-portrait-600x800.webp">
+          <img loading="lazy" width="600" height="800" alt="Mike from Veteran Drywall team" src="assets/images/jpg-fallbacks/mike-veteran-drywall-finisher.jpg">
+        </picture>
+        <h3>Mike</h3><span>Veteran Drywall Team</span>
       </div>
       <div class="member reveal">
-        <img loading="lazy" width="450" height="600" alt="Rick — Drywall specialist" src="https://static.wixstatic.com/media/e64608_57efbb2283754d0ba2eba70814b2673c~mv2.jpg/v1/crop/x_155,y_208,w_1112,h_1237/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A1121-Enhanced-NR-2.jpg">
-        <h3>Rick</h3><span>Finisher</span>
+        <picture>
+          <source type="image/webp" srcset="assets/images/team-portraits-webp/rick-veteran-drywall-team-portrait-600x800.webp">
+          <img loading="lazy" width="600" height="800" alt="Rick from Veteran Drywall team" src="assets/images/jpg-fallbacks/rick-veteran-drywall-finisher.jpg">
+        </picture>
+        <h3>Rick</h3><span>Veteran Drywall Team</span>
       </div>
     </div>
   </div>
@@ -819,6 +875,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     </div>
     <!-- TODO (owner): once a Google Business Profile link exists, add a Google review CTA + review schema for real, permissioned reviews only. Do not fabricate reviews. -->
     <div class="g-placeholder">Google review section ready to go — link your Google Business Profile and we'll add a review CTA and star rating here.</div>
+  </div>
+</section>
+
+<!-- ================= FAST ANSWERS (compact AEO hub for search/AI summaries) ================= -->
+<section class="fast-answers" id="fast-answers">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Fast Answers</span>
+      <h2 style="font-size:clamp(30px,4vw,44px)">Quick, Straight Answers</h2>
+      <p class="lede">The short version of the questions we hear most — written for humans, search engines, and AI summaries alike.</p>
+    </div>
+    <div class="grid">
+      <div class="fa-card reveal">
+        <h3>Do you repair small drywall holes?</h3>
+        <p>Yes. Veteran Drywall handles small patches, doorknob holes, cracks, ceiling damage, and texture matching throughout North Port, Port Charlotte, and nearby areas.</p>
+      </div>
+      <div class="fa-card reveal">
+        <h3>Can you match Florida wall and ceiling textures?</h3>
+        <p>Yes. We match common Southwest Florida textures such as knockdown, orange peel, skip trowel, popcorn texture, and smooth finishes.</p>
+      </div>
+      <div class="fa-card reveal">
+        <h3>Do you repair water-damaged drywall?</h3>
+        <p>Yes. Once the source of the leak is fixed and the area is safe and dry, we repair and refinish damaged drywall and ceilings.</p>
+      </div>
+      <div class="fa-card reveal">
+        <h3>Do you work with property managers and realtors?</h3>
+        <p>Yes. We help with move-out repairs, tenant damage, listing prep, punch-list repairs, and paint-ready drywall fixes.</p>
+      </div>
+      <div class="fa-card reveal">
+        <h3>What areas do you serve?</h3>
+        <p>Veteran Drywall is based in North Port and serves Port Charlotte, Venice, Sarasota, Englewood, Punta Gorda, Charlotte County, and Sarasota County.</p>
+      </div>
+      <div class="fa-card reveal">
+        <h3>How do I get the fastest quote?</h3>
+        <p>Call the primary line at (941) 527-5924 or submit the quote form with your city, service needed, project details, and 2–3 photos if available.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -990,6 +1083,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <small><strong style="font-family:var(--head);letter-spacing:2px;text-transform:uppercase;color:#F5F2EA">Service Area</strong><br>North Port · Port Charlotte · Venice<br>Sarasota · Englewood · Punta Gorda</small>
     </div>
     <div>
+      <!-- TODO (owner): add a Google Business Profile link here once available -->
       <small><strong style="font-family:var(--head);letter-spacing:2px;text-transform:uppercase;color:#F5F2EA">Follow</strong><br><a href="https://www.facebook.com/profile.php?id=61557745545101" target="_blank" rel="noopener">Facebook</a></small>
       <small style="margin-top:14px"><a href="privacy.html">Privacy Policy</a></small>
       <small style="margin-top:14px">© <span id="yr">2026</span> Veteran Drywall LLC.<br>Veteran owned &amp; operated. Semper Fi.</small>

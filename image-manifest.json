@@ -1,0 +1,327 @@
+[
+  {
+    "file": "assets/images/webp/veteran-drywall-crew-og-1200x630.webp",
+    "dimensions": [
+      1200,
+      630
+    ],
+    "usage": "Open Graph / social preview",
+    "alt": "Veteran Drywall crew standing outdoors in North Port Florida"
+  },
+  {
+    "file": "assets/images/webp/veteran-drywall-crew-mobile-900x1200.webp",
+    "dimensions": [
+      900,
+      1200
+    ],
+    "usage": "Mobile hero fallback",
+    "alt": "Veteran Drywall crew standing outdoors in North Port Florida"
+  },
+  {
+    "file": "assets/images/webp/veteran-drywall-crew-hero.webp",
+    "dimensions": [
+      1901,
+      1053
+    ],
+    "usage": "Hero / About / Team banner",
+    "alt": "Veteran Drywall crew standing outdoors in North Port Florida",
+    "original_dimensions": [
+      1901,
+      1053
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/veteran-drywall-crew-hero.jpg",
+    "dimensions": [
+      1901,
+      1053
+    ],
+    "usage": "Hero / About / Team banner fallback",
+    "alt": "Veteran Drywall crew standing outdoors in North Port Florida",
+    "original_dimensions": [
+      1901,
+      1053
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/veteran-drywall-crew-hero-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Veteran Drywall crew standing outdoors in North Port Florida"
+  },
+  {
+    "file": "assets/images/webp/rick-veteran-drywall-finisher.webp",
+    "dimensions": [
+      488,
+      448
+    ],
+    "usage": "Team portrait",
+    "alt": "Rick from Veteran Drywall team",
+    "original_dimensions": [
+      488,
+      448
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/rick-veteran-drywall-finisher.jpg",
+    "dimensions": [
+      488,
+      448
+    ],
+    "usage": "Team portrait fallback",
+    "alt": "Rick from Veteran Drywall team",
+    "original_dimensions": [
+      488,
+      448
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/rick-veteran-drywall-finisher-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Rick from Veteran Drywall team"
+  },
+  {
+    "file": "assets/images/webp/steven-mcpherson-veteran-drywall-owner.webp",
+    "dimensions": [
+      490,
+      450
+    ],
+    "usage": "Team portrait / owner card",
+    "alt": "Steven McPherson owner of Veteran Drywall",
+    "original_dimensions": [
+      490,
+      450
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg",
+    "dimensions": [
+      490,
+      450
+    ],
+    "usage": "Team portrait / owner card fallback",
+    "alt": "Steven McPherson owner of Veteran Drywall",
+    "original_dimensions": [
+      490,
+      450
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/steven-mcpherson-veteran-drywall-owner-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Steven McPherson owner of Veteran Drywall"
+  },
+  {
+    "file": "assets/images/webp/mike-veteran-drywall-finisher.webp",
+    "dimensions": [
+      488,
+      448
+    ],
+    "usage": "Team portrait",
+    "alt": "Mike from Veteran Drywall team",
+    "original_dimensions": [
+      488,
+      448
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/mike-veteran-drywall-finisher.jpg",
+    "dimensions": [
+      488,
+      448
+    ],
+    "usage": "Team portrait fallback",
+    "alt": "Mike from Veteran Drywall team",
+    "original_dimensions": [
+      488,
+      448
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/mike-veteran-drywall-finisher-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Mike from Veteran Drywall team"
+  },
+  {
+    "file": "assets/images/webp/usmc-veteran-service-photo-american-flag.webp",
+    "dimensions": [
+      574,
+      416
+    ],
+    "usage": "Veteran story section",
+    "alt": "United States Marine Corps service photo with American flag",
+    "original_dimensions": [
+      574,
+      416
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/usmc-veteran-service-photo-american-flag.jpg",
+    "dimensions": [
+      574,
+      416
+    ],
+    "usage": "Veteran story section fallback",
+    "alt": "United States Marine Corps service photo with American flag",
+    "original_dimensions": [
+      574,
+      416
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/usmc-veteran-service-photo-american-flag-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "United States Marine Corps service photo with American flag"
+  },
+  {
+    "file": "assets/images/webp/interior-painting-drywall-finishing.webp",
+    "dimensions": [
+      574,
+      416
+    ],
+    "usage": "Gallery / painting service",
+    "alt": "Interior painting and drywall finishing project",
+    "original_dimensions": [
+      574,
+      416
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/interior-painting-drywall-finishing.jpg",
+    "dimensions": [
+      574,
+      416
+    ],
+    "usage": "Gallery / painting service fallback",
+    "alt": "Interior painting and drywall finishing project",
+    "original_dimensions": [
+      574,
+      416
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/interior-painting-drywall-finishing-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Interior painting and drywall finishing project"
+  },
+  {
+    "file": "assets/images/webp/drywall-window-scaffold-finishing-project.webp",
+    "dimensions": [
+      894,
+      1058
+    ],
+    "usage": "Gallery / drywall finishing",
+    "alt": "Drywall finishing work around large arched window with scaffold",
+    "original_dimensions": [
+      894,
+      1058
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/drywall-window-scaffold-finishing-project.jpg",
+    "dimensions": [
+      894,
+      1058
+    ],
+    "usage": "Gallery / drywall finishing fallback",
+    "alt": "Drywall finishing work around large arched window with scaffold",
+    "original_dimensions": [
+      894,
+      1058
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/drywall-window-scaffold-finishing-project-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Drywall finishing work around large arched window with scaffold"
+  },
+  {
+    "file": "assets/images/webp/interior-remodel-framing-prep.webp",
+    "dimensions": [
+      574,
+      416
+    ],
+    "usage": "Gallery / remodel prep",
+    "alt": "Interior remodel with wall framing and preparation",
+    "original_dimensions": [
+      574,
+      416
+    ]
+  },
+  {
+    "file": "assets/images/jpg-fallbacks/interior-remodel-framing-prep.jpg",
+    "dimensions": [
+      574,
+      416
+    ],
+    "usage": "Gallery / remodel prep fallback",
+    "alt": "Interior remodel with wall framing and preparation",
+    "original_dimensions": [
+      574,
+      416
+    ]
+  },
+  {
+    "file": "assets/images/gallery-square-webp/interior-remodel-framing-prep-square-900.webp",
+    "dimensions": [
+      900,
+      900
+    ],
+    "usage": "Square gallery/card image",
+    "alt": "Interior remodel with wall framing and preparation"
+  },
+  {
+    "file": "assets/images/team-portraits-webp/rick-veteran-drywall-team-portrait-600x800.webp",
+    "dimensions": [
+      600,
+      800
+    ],
+    "usage": "Team card portrait 3:4",
+    "alt": "Rick from Veteran Drywall team"
+  },
+  {
+    "file": "assets/images/team-portraits-webp/steven-mcpherson-owner-portrait-600x800.webp",
+    "dimensions": [
+      600,
+      800
+    ],
+    "usage": "Team card portrait 3:4",
+    "alt": "Steven McPherson owner of Veteran Drywall"
+  },
+  {
+    "file": "assets/images/team-portraits-webp/mike-veteran-drywall-team-portrait-600x800.webp",
+    "dimensions": [
+      600,
+      800
+    ],
+    "usage": "Team card portrait 3:4",
+    "alt": "Mike from Veteran Drywall team"
+  }
+]
