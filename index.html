@@ -164,9 +164,9 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 /* ---------- Hero ---------- */
 .hero{position:relative;background:var(--ink);color:var(--paper);padding:0;overflow:hidden}
 .hero-media{position:absolute;inset:0;z-index:0}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-@media(max-width:760px){.hero-media img{object-position:center 22%}}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(12,14,18,.94) 0%,rgba(12,14,18,.82) 45%,rgba(12,14,18,.45) 100%)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+@media(max-width:760px){.hero-media img{object-position:center 24%}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(12,14,18,.90) 0%,rgba(12,14,18,.74) 45%,rgba(12,14,18,.32) 100%)}
 .hero-inner{position:relative;z-index:2;padding:clamp(88px,11vw,132px) 0 clamp(72px,9vw,112px);max-width:920px}
 .hero h1{font-size:clamp(40px,5.2vw,68px);font-weight:700;color:var(--paper);text-shadow:0 4px 22px rgba(0,0,0,.45);max-width:980px;text-wrap:balance}
 .hero h1 em{font-style:normal;color:var(--gold-2)}
@@ -286,8 +286,12 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .why .verse{border-left:3px solid var(--gold);padding:14px 20px;background:rgba(232,188,85,.06);font-style:italic;color:var(--gold-2);border-radius:0 8px 8px 0;margin:24px 0}
 .why .verse small{display:block;font-style:normal;font-family:var(--head);letter-spacing:3px;margin-top:6px;color:rgba(245,242,234,.6)}
 .why-photo{position:relative}
-.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;object-fit:cover;object-position:center 15%;width:100%}
+.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;object-fit:cover;object-position:center top;width:100%}
 .why-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--gold);border-radius:var(--radius);z-index:-1;opacity:.5}
+/* Light variant — keeps dark sections from stacking back-to-back (Priority → Why Us → Standard → Veteran Story → Water Damage now alternates dark/light/dark/light/dark) */
+.why.story-light{background:var(--paper-2);color:var(--ink)}
+.why.story-light h2{color:var(--ink)}
+.why.story-light p{color:rgba(21,24,29,.78)}
 @media(max-width:700px){.why-grid{grid-template-columns:1fr}.why-photo{max-width:420px;margin:0 auto}}
 
 /* ---------- Team ---------- */
@@ -297,7 +301,7 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 @media(min-width:481px) and (max-width:1024px){.team .grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:480px){.team .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
 .member{text-align:center}
-.member img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 12%;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s ease}
+.member img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s ease}
 .member:hover img{transform:scale(1.03)}
 .member h3{font-size:26px;margin:14px 0 2px;color:var(--paper)}
 .member span{font-family:var(--head);font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2)}
@@ -357,6 +361,17 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .pm .aeo-answer{background:rgba(232,188,85,.08);color:rgba(245,242,234,.9)}
 .pm .aeo-answer strong{color:var(--gold-2)}
 @media(max-width:700px){.pm-grid{grid-template-columns:1fr}.pm ul{grid-template-columns:1fr}}
+/* Light variant — used so Team → Property Managers → Reviews doesn't stack three dark sections in a row */
+.pm.pm-light{background:var(--paper-2);color:var(--ink)}
+.pm.pm-light h2{color:var(--ink)}
+.pm.pm-light p{color:rgba(21,24,29,.75)}
+.pm.pm-light li{color:var(--ink)}
+.pm.pm-light li::before{color:var(--gold)}
+.pm.pm-light .pm-card{background:rgba(217,166,46,.08);border:1px solid rgba(217,166,46,.35)}
+.pm.pm-light .pm-card h3{color:var(--ink)}
+.pm.pm-light .pm-card p{color:rgba(21,24,29,.72)}
+.pm.pm-light .aeo-answer{background:var(--paper);color:rgba(21,24,29,.85)}
+.pm.pm-light .aeo-answer strong{color:var(--ink)}
 
 /* ---------- Reviews CTA ---------- */
 .reviews{background:var(--ink);color:var(--paper);text-align:center}
@@ -660,6 +675,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
+<!-- ================= VETERAN STANDARD ================= -->
+<!-- Moved ahead of Why Us so dark/light sections alternate instead of stacking
+     (Priority=dark, Standard=light, Why Us=dark, Veteran Story=light, Water Damage=dark). -->
+<section class="standard" id="standard">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">How We Operate</span>
+      <h2>The Veteran Standard</h2>
+      <p class="lede">No subcontractor roulette. Clean work. Clear communication. Flawless finish. Small patches to full remodels — Florida texture matching done right.</p>
+    </div>
+    <div class="grid">
+      <div class="step reveal"><b>1</b><h3>Mission Brief</h3><p>We inspect the job, explain the scope, and give you a straight answer.</p></div>
+      <div class="step reveal"><b>2</b><h3>Site Protection</h3><p>We protect floors, furniture, and work areas before the repair begins.</p></div>
+      <div class="step reveal"><b>3</b><h3>Precision Finish</h3><p>Tape, mud, sand, texture, and finish work done with attention to detail.</p></div>
+      <div class="step reveal"><b>4</b><h3>Final Walkthrough</h3><p>We don't call it complete until the finish meets the standard we demand of ourselves.</p></div>
+    </div>
+    <div class="hero-cta" style="margin-top:34px">
+      <a class="btn btn-gold" href="#quote">Request a Free Quote</a>
+      <a class="btn" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= WHY US ================= -->
 <section class="why" id="why">
   <div class="wrap why-grid">
@@ -686,29 +724,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
-<!-- ================= VETERAN STANDARD ================= -->
-<section class="standard" id="standard">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">How We Operate</span>
-      <h2>The Veteran Standard</h2>
-      <p class="lede">No subcontractor roulette. Clean work. Clear communication. Flawless finish. Small patches to full remodels — Florida texture matching done right.</p>
-    </div>
-    <div class="grid">
-      <div class="step reveal"><b>1</b><h3>Mission Brief</h3><p>We inspect the job, explain the scope, and give you a straight answer.</p></div>
-      <div class="step reveal"><b>2</b><h3>Site Protection</h3><p>We protect floors, furniture, and work areas before the repair begins.</p></div>
-      <div class="step reveal"><b>3</b><h3>Precision Finish</h3><p>Tape, mud, sand, texture, and finish work done with attention to detail.</p></div>
-      <div class="step reveal"><b>4</b><h3>Final Walkthrough</h3><p>We don't call it complete until the finish meets the standard we demand of ourselves.</p></div>
-    </div>
-    <div class="hero-cta" style="margin-top:34px">
-      <a class="btn btn-gold" href="#quote">Request a Free Quote</a>
-      <a class="btn" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
-    </div>
-  </div>
-</section>
-
 <!-- ================= VETERAN STORY ================= -->
-<section class="why" id="veteran-story" style="border-top:1px solid var(--line)">
+<section class="why story-light" id="veteran-story" style="border-top:1px solid var(--line)">
   <div class="wrap why-grid">
     <div class="why-photo reveal" style="order:2">
       <picture>
@@ -758,26 +775,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <button class="gfilter" type="button" data-filter="remodels">Remodels</button>
       <button class="gfilter" type="button" data-filter="crew">Crew at Work</button>
     </div>
-    <!-- 4 photos below are fully self-hosted from /assets/images/gallery-square-webp/ (new image package).
-         The remaining photos further down are still hotlinked from Wix CDN — TODO (owner/dev): download
-         originals and self-host in /assets/images before cancelling Wix. Automated download was not
-         possible from this session (sandbox network is allowlisted and blocks the Wix CDN + Netlify
-         domains) — export the media library from Wix or resave the originals locally, then swap these
-         src values for local paths (see self-host-images.sh). -->
+    <!-- Curated to the strongest 9 photos (was 12–14 across earlier rounds, including a repeat of the
+         hero crew photo — removed per client feedback that images shouldn't repeat across hero/gallery/team).
+         3 of these 9 are fully self-hosted from /assets/images/gallery-square-webp/. The remaining 6 are
+         still hotlinked from Wix CDN — re-checked this round (both the asset folder and every prior zip),
+         no additional original files for these 6 photos exist locally yet, and the Wix CDN is still
+         blocked from this sandbox (confirmed again: 403 blocked-by-allowlist). Kept them live rather than
+         deleting real project photos. TODO (owner/dev): export these 6 originals from your Wix media
+         library (Site → Media Manager) or send them to me directly, and I'll self-host them immediately
+         (see self-host-images.sh for the batch approach). -->
     <div class="grid" id="galleryGrid">
-      <figure class="reveal" data-cat="crew"><span class="gcat">Crew at Work</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/veteran-drywall-crew-hero-square-900.webp"><img loading="lazy" width="960" height="960" alt="Veteran Drywall crew standing outdoors in North Port Florida" src="assets/images/jpg-fallbacks/veteran-drywall-crew-hero.jpg"></picture><figcaption>Our crew — North Port, FL</figcaption></figure>
-      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/drywall-window-scaffold-finishing-project-square-900.webp"><img loading="lazy" width="960" height="960" alt="Drywall finishing work around large arched window with scaffold" src="assets/images/jpg-fallbacks/drywall-window-scaffold-finishing-project.jpg"></picture><figcaption>Drywall finishing around a window opening</figcaption></figure>
-      <figure class="reveal" data-cat="painting"><span class="gcat">Painting</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/interior-painting-drywall-finishing-square-900.webp"><img loading="lazy" width="960" height="960" alt="Interior painting and drywall finishing project" src="assets/images/jpg-fallbacks/interior-painting-drywall-finishing.jpg"></picture><figcaption>Paint &amp; finish work</figcaption></figure>
-      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/interior-remodel-framing-prep-square-900.webp"><img loading="lazy" width="960" height="960" alt="Interior remodel with wall framing and preparation" src="assets/images/jpg-fallbacks/interior-remodel-framing-prep.jpg"></picture><figcaption>Remodel framing &amp; prep</figcaption></figure>
-      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="Drywall patch repair, finished and sanded smooth — North Port area project" src="https://static.wixstatic.com/media/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg"><figcaption>Drywall repair — patched &amp; finished</figcaption></figure>
-      <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Drywall texture finishing work matched to surrounding wall" src="https://static.wixstatic.com/media/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg"><figcaption>Drywall finishing work</figcaption></figure>
-      <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Close-up of matched wall texture after drywall repair" src="https://static.wixstatic.com/media/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png"><figcaption>Texture matching detail</figcaption></figure>
-      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><img loading="lazy" width="960" height="960" alt="Completed interior remodel with new drywall and paint" src="https://static.wixstatic.com/media/e64608_2410a06b767d4f499e9cb0bae6638a55~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_2410a06b767d4f499e9cb0bae6638a55~mv2.png"><figcaption>Completed interior remodel</figcaption></figure>
-      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="New drywall installation, hung and taped" src="https://static.wixstatic.com/media/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg"><figcaption>Drywall installation</figcaption></figure>
-      <figure class="reveal" data-cat="painting"><span class="gcat">Painting</span><img loading="lazy" width="960" height="960" alt="Interior paint and drywall finish work, sharp clean lines" src="https://static.wixstatic.com/media/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg"><figcaption>Paint &amp; finish work</figcaption></figure>
-      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><img loading="lazy" width="960" height="960" alt="Remodeling project, drywall and framing work in progress" src="https://static.wixstatic.com/media/e64608_d71299b1e4ef4169b25cfba0c351571f~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_d71299b1e4ef4169b25cfba0c351571f~mv2.jpeg"><figcaption>Remodeling project</figcaption></figure>
+      <figure class="reveal" data-cat="crew"><span class="gcat">Crew at Work</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/drywall-window-scaffold-finishing-project-square-900.webp"><img loading="lazy" width="960" height="960" alt="Drywall contractor finishing ceiling repair on scaffold" src="assets/images/jpg-fallbacks/drywall-window-scaffold-finishing-project.jpg"></picture><figcaption>Drywall finishing with protective plastic setup</figcaption></figure>
+      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="Drywall patch repair, finished and sanded smooth — North Port area project" src="https://static.wixstatic.com/media/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg"><figcaption>Ceiling drywall repair and finishing</figcaption></figure>
+      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="New drywall installation, hung and taped" src="https://static.wixstatic.com/media/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg"><figcaption>Interior drywall finishing project</figcaption></figure>
+      <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Close-up of drywall texture matching sample" src="https://static.wixstatic.com/media/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png"><figcaption>Texture matching and ceiling finish detail</figcaption></figure>
+      <figure class="reveal" data-cat="painting"><span class="gcat">Painting</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/interior-painting-drywall-finishing-square-900.webp"><img loading="lazy" width="960" height="960" alt="Interior painting and drywall finishing project" src="assets/images/jpg-fallbacks/interior-painting-drywall-finishing.jpg"></picture><figcaption>Interior drywall finishing project</figcaption></figure>
+      <figure class="reveal" data-cat="painting"><span class="gcat">Painting</span><img loading="lazy" width="960" height="960" alt="Interior paint and drywall finish work, sharp clean lines" src="https://static.wixstatic.com/media/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg"><figcaption>Large-room drywall finishing and surface prep</figcaption></figure>
+      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><picture><source type="image/webp" srcset="assets/images/gallery-square-webp/interior-remodel-framing-prep-square-900.webp"><img loading="lazy" width="960" height="960" alt="Interior remodel with wall framing and preparation" src="assets/images/jpg-fallbacks/interior-remodel-framing-prep.jpg"></picture><figcaption>Interior remodel framing prep</figcaption></figure>
       <figure class="reveal" data-cat="stucco"><span class="gcat">Stucco</span><img loading="lazy" width="960" height="960" alt="Stucco repair matched to existing exterior texture" src="https://static.wixstatic.com/media/e64608_85da5961321a4b1580295432f77a58dc~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_85da5961321a4b1580295432f77a58dc~mv2.jpeg"><figcaption>Stucco &amp; exterior work</figcaption></figure>
-      <figure class="reveal" data-cat="ceilings"><span class="gcat">Ceilings</span><img loading="lazy" width="960" height="960" alt="Drywall ceiling repair with texture blended in" src="https://static.wixstatic.com/media/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg"><figcaption>Ceiling repair detail</figcaption></figure>
+      <figure class="reveal" data-cat="ceilings"><span class="gcat">Ceilings</span><img loading="lazy" width="960" height="960" alt="Drywall ceiling repair with texture blended in" src="https://static.wixstatic.com/media/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg"><figcaption>Ceiling drywall repair and finishing</figcaption></figure>
     </div>
   </div>
 </section>
@@ -842,7 +858,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </section>
 
 <!-- ================= PROPERTY MANAGER / REALTOR ================= -->
-<section class="pm" id="property-managers">
+<section class="pm pm-light" id="property-managers">
   <div class="wrap pm-grid">
     <div>
       <span class="kicker" style="color:var(--gold-2)">Built For Turnover Speed</span>
