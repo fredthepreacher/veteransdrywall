@@ -286,7 +286,9 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .why .verse{border-left:3px solid var(--gold);padding:14px 20px;background:rgba(232,188,85,.06);font-style:italic;color:var(--gold-2);border-radius:0 8px 8px 0;margin:24px 0}
 .why .verse small{display:block;font-style:normal;font-family:var(--head);letter-spacing:3px;margin-top:6px;color:rgba(245,242,234,.6)}
 .why-photo{position:relative}
-.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:4/5;object-fit:cover;object-position:center top;width:100%}
+/* object-fit:contain guarantees the full person/photo and background is always visible — no crop possible.
+   The gradient fills any letterbox space so it still reads as an intentional portrait frame. */
+.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:2/3;max-height:760px;object-fit:contain;object-position:center center;width:100%;background:radial-gradient(circle at 50% 20%,rgba(217,166,46,.12),transparent 46%),rgba(245,242,234,.04)}
 .why-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--gold);border-radius:var(--radius);z-index:-1;opacity:.5}
 /* Light variant — keeps dark sections from stacking back-to-back (Priority → Why Us → Standard → Veteran Story → Water Damage now alternates dark/light/dark/light/dark) */
 .why.story-light{background:var(--paper-2);color:var(--ink)}
@@ -301,8 +303,13 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 @media(min-width:481px) and (max-width:1024px){.team .grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:480px){.team .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
 .member{text-align:center}
-.member img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .3s ease}
-.member:hover img{transform:scale(1.03)}
+/* Full-portrait "zoomed out" frame: object-fit:contain guarantees the whole person + background
+   is always visible (no cropping possible), with a soft gold/dark gradient filling any letterbox
+   space so it reads as an intentional portrait frame rather than empty space. */
+.member-frame{width:100%;height:clamp(400px,44vw,560px);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:radial-gradient(circle at 50% 18%,rgba(217,166,46,.14),transparent 42%),linear-gradient(180deg,rgba(245,242,234,.06),rgba(12,14,18,.46));transition:transform .3s ease}
+.member-frame img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block}
+.member:hover .member-frame{transform:scale(1.02)}
+@media(max-width:480px){.member-frame{height:clamp(360px,88vw,480px)}}
 .member h3{font-size:26px;margin:14px 0 2px;color:var(--paper)}
 .member span{font-family:var(--head);font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2)}
 
@@ -711,7 +718,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="why-photo reveal">
       <picture>
         <source type="image/webp" srcset="assets/images/webp/steven-mcpherson-veteran-drywall-owner.webp">
-        <img src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg" alt="Steven McPherson, USMC veteran and owner of Veteran Drywall" loading="lazy" width="490" height="450">
+        <img src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg" alt="Steven McPherson owner of Veteran Drywall standing outdoors" loading="lazy" width="490" height="450">
       </picture>
     </div>
   </div>
@@ -833,24 +840,30 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Meet the Veteran Drywall Team</h2>
     <div class="grid">
       <div class="member reveal">
-        <picture>
-          <source type="image/webp" srcset="assets/images/team-portraits-webp/steven-mcpherson-owner-portrait-600x800.webp">
-          <img loading="lazy" width="600" height="800" alt="Steven McPherson owner of Veteran Drywall" src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg">
-        </picture>
+        <div class="member-frame">
+          <picture>
+            <source type="image/webp" srcset="assets/images/webp/steven-mcpherson-veteran-drywall-owner.webp">
+            <img loading="lazy" width="490" height="450" alt="Steven McPherson owner of Veteran Drywall standing outdoors" src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg">
+          </picture>
+        </div>
         <h3>Steven McPherson</h3><span>Owner · USMC Veteran</span>
       </div>
       <div class="member reveal">
-        <picture>
-          <source type="image/webp" srcset="assets/images/team-portraits-webp/mike-veteran-drywall-team-portrait-600x800.webp">
-          <img loading="lazy" width="600" height="800" alt="Mike from Veteran Drywall team" src="assets/images/jpg-fallbacks/mike-veteran-drywall-finisher.jpg">
-        </picture>
+        <div class="member-frame">
+          <picture>
+            <source type="image/webp" srcset="assets/images/webp/mike-veteran-drywall-finisher.webp">
+            <img loading="lazy" width="488" height="448" alt="Mike from Veteran Drywall team standing outdoors" src="assets/images/jpg-fallbacks/mike-veteran-drywall-finisher.jpg">
+          </picture>
+        </div>
         <h3>Mike</h3><span>Veteran Drywall Team</span>
       </div>
       <div class="member reveal">
-        <picture>
-          <source type="image/webp" srcset="assets/images/team-portraits-webp/rick-veteran-drywall-team-portrait-600x800.webp">
-          <img loading="lazy" width="600" height="800" alt="Rick from Veteran Drywall team" src="assets/images/jpg-fallbacks/rick-veteran-drywall-finisher.jpg">
-        </picture>
+        <div class="member-frame">
+          <picture>
+            <source type="image/webp" srcset="assets/images/webp/rick-veteran-drywall-finisher.webp">
+            <img loading="lazy" width="488" height="448" alt="Rick from Veteran Drywall team standing outdoors" src="assets/images/jpg-fallbacks/rick-veteran-drywall-finisher.jpg">
+          </picture>
+        </div>
         <h3>Rick</h3><span>Veteran Drywall Team</span>
       </div>
     </div>
@@ -1125,178 +1138,4 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div><b>Veteran Drywall</b><small>Website Assistant</small></div>
     <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
   </div>
-  <div class="chat-log" id="chatLog" aria-live="polite"></div>
-  <div class="chat-starters" id="chatStarters">
-    <button type="button">I have water-damaged drywall</button>
-    <button type="button">I need texture matched</button>
-    <button type="button">I have a ceiling stain</button>
-    <button type="button">I need a hole patched</button>
-    <button type="button">Can I send photos?</button>
-    <button type="button">Do you serve Port Charlotte?</button>
-    <button type="button">I'm a property manager</button>
-  </div>
-  <form class="chat-input" id="chatForm">
-    <label for="chatText" class="skip-link">Type your question</label>
-    <input id="chatText" type="text" placeholder="Ask about drywall, stucco, paint…" autocomplete="off" maxlength="300">
-    <button type="submit" aria-label="Send message">Send</button>
-  </form>
-  <p class="chat-disclaimer">This assistant answers general questions and helps you request service. Final pricing and scheduling are confirmed by the Veteran Drywall team.</p>
-</div>
-
-<script>
-// Header shadow on scroll
-const hdr = document.querySelector('header');
-addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 10), {passive:true});
-
-// Reveal on scroll
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-}), {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// Lightbox (respects current gallery filter) — keyboard accessible with focus trap
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const lbFocusable = [...lb.querySelectorAll('button')];
-let shots = [...document.querySelectorAll('#galleryGrid figure:not(.hide) img')];
-let idx = 0;
-let lastTrigger = null;
-const show = i => { idx = (i + shots.length) % shots.length; lbImg.src = shots[idx].src; lbImg.alt = shots[idx].alt; };
-const openLightbox = (i, triggerEl) => {
-  lastTrigger = triggerEl || document.activeElement;
-  show(i);
-  lb.classList.add('open');
-  lb.querySelector('.lb-close').focus();
-};
-const closeLightbox = () => {
-  lb.classList.remove('open');
-  if (lastTrigger && document.body.contains(lastTrigger)) lastTrigger.focus();
-};
-const bindGallery = () => {
-  shots = [...document.querySelectorAll('#galleryGrid figure:not(.hide) img')];
-  shots.forEach((img, i) => {
-    const fig = img.closest('figure');
-    fig.setAttribute('tabindex', '0');
-    fig.setAttribute('role', 'button');
-    fig.setAttribute('aria-label', 'View enlarged: ' + (img.alt || 'project photo'));
-    fig.onclick = () => openLightbox(i, fig);
-    fig.onkeydown = e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i, fig); }
-    };
-  });
-};
-bindGallery();
-lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
-lb.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
-lb.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
-lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
-addEventListener('keydown', e => {
-  if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape') { closeLightbox(); return; }
-  if (e.key === 'ArrowLeft') show(idx - 1);
-  if (e.key === 'ArrowRight') show(idx + 1);
-  if (e.key === 'Tab') {
-    // simple focus trap among the lightbox's buttons
-    const first = lbFocusable[0], last = lbFocusable[lbFocusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-  }
-});
-
-// Gallery filters
-document.querySelectorAll('.gfilter').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.gfilter').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('#galleryGrid figure').forEach(fig => {
-      fig.classList.toggle('hide', f !== 'all' && fig.dataset.cat !== f);
-    });
-    bindGallery();
-  });
-});
-
-// "Choose Your Drywall Problem" cards — preselect service + scroll to quote
-document.querySelectorAll('.problem-card .pcta').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const svc = btn.dataset.service;
-    const select = document.getElementById('service');
-    if (svc && select) {
-      const opt = [...select.options].find(o => o.value === svc || o.text === svc);
-      if (opt) select.value = opt.value;
-    }
-    document.getElementById('quote').scrollIntoView({behavior:'smooth'});
-    setTimeout(() => document.getElementById('fname')?.focus({preventScroll:true}), 500);
-  });
-});
-
-// Footer year
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-/* ================= CHATBOT (rule-based; uses only verified site facts) =================
-   To upgrade to real AI: replace reply() with a fetch() to a Netlify Function
-   that holds the API key server-side. NEVER put an API key in this file. */
-(() => {
-  const fab = document.getElementById('chatFab');
-  const panel = document.getElementById('chatPanel');
-  const log = document.getElementById('chatLog');
-  const form = document.getElementById('chatForm');
-  const input = document.getElementById('chatText');
-  const CTAS = '<a class="chat-cta" href="#quote">Free Quote</a><a class="chat-cta" href="tel:+19415275924">Call Now</a>';
-
-  const RULES = [
-    { k: /mold|electrical|structural|foundation/i, r: "Important: if you suspect mold, an electrical hazard, or a structural issue, that needs the right licensed professional first — please have it checked before drywall repair begins. Once the area is safe and dry, we handle the drywall and finish. " + CTAS },
-    { k: /water|leak|flood|storm|soft wall|soft drywall|stain/i, r: "We repair water-damaged drywall and ceilings from plumbing leaks, AC pan leaks, roof leaks and storm damage, then blend the texture. If the leak is still active or you suspect mold/electrical/structural issues, address that first — then we make the walls look new again. " + CTAS },
-    { k: /urgent|emergency|asap|today/i, r: "For fastest help, call Veteran Drywall directly at (941) 527-5924. If there is an active leak, mold concern, electrical issue, or structural concern, address that first with the right professional. Once safe and dry, Veteran Drywall can repair and finish the wall or ceiling. " + CTAS },
-    { k: /popcorn/i, r: "Yes — we remove popcorn ceilings and refinish smooth, knockdown, or matched to your preference. " + CTAS },
-    { k: /texture|knockdown|orange peel|skip trowel|level.?5|match/i, r: "Yes — texture matching is our specialty: knockdown, orange peel, skip trowel, smooth/level-5 and stucco texture. Repairs blend in so you can't spot them. " + CTAS },
-    { k: /ceiling/i, r: "Yes, we repair and refinish drywall ceilings — cracks, sagging, stains and texture blending so the repair disappears. " + CTAS },
-    { k: /repair|patch|hole|crack|damage/i, r: "Yes, we handle drywall repairs of every size — patches, cracks, doorknob holes, ceiling repairs and texture blending. No job is too small. " + CTAS },
-    { k: /property manager|landlord|realtor|rental|tenant|listing|investor/i, r: "We regularly work with property managers, landlords and realtors on tenant-damage repairs, move-out punch lists, and listing prep — fast turnaround, clean communication. " + CTAS },
-    { k: /quote|estimate|price|cost|how much/i, r: "Estimates are free. Use the quote form (name, phone, service, brief details) or call (941) 527-5924. Photos of the damage help us quote accurately — we can't give exact pricing in chat. " + CTAS },
-    { k: /photo|picture|image|send/i, r: "Photos help a lot! Mention in the quote form that you have photos, and we'll reply by email or text so you can send them. A few shots of the damage plus rough dimensions is perfect. " + CTAS },
-    { k: /port charlotte/i, r: "Yes — Port Charlotte is one of our core service areas alongside North Port, Venice, Sarasota, Englewood and Punta Gorda. " + CTAS },
-    { k: /area|serve|location|where|north port|venice|sarasota|englewood|punta gorda|charlotte county/i, r: "We serve North Port (home base), Port Charlotte, Venice, Sarasota, Englewood and Punta Gorda — covering Sarasota and Charlotte County. Close by but not listed? Call and ask — (941) 527-5924." },
-    { k: /stucco/i, r: "Yes — stucco repair and application, matched to your existing texture and profile. " + CTAS },
-    { k: /paint/i, r: "Yes, we do interior and exterior painting — usually as the finishing step of our drywall and stucco work. " + CTAS },
-    { k: /new construction|hang|install|frame|framing|trim|carpentry|baseboard|crown|remodel/i, r: "We cover new-construction drywall (hanging, taping, finishing), remodels from studs to paint-ready, plus framing, carpentry and trim. " + CTAS },
-    { k: /veteran|marine|usmc|owner|steven|who/i, r: "Veteran Drywall is owned by Steven McPherson, a U.S. Marine Corps veteran with 10+ years of service and 4 overseas deployments. He works every job with his crew, Mike and Rick." },
-    { k: /license|insured|lic/i, r: "Veteran Drywall LLC operates under Florida license # SCC131152687. If you need documentation for an HOA or property manager, just ask when you request your quote." },
-    { k: /hour|open|when|schedule|time/i, r: "The team confirms scheduling directly — I don't want to promise hours I can't guarantee. Call (941) 527-5924 or send the quote form and they'll follow up fast. " + CTAS },
-    { k: /hi|hello|hey/i, r: "Hi! I can answer questions about drywall repair, texture matching, water damage, popcorn ceilings, stucco, paint and how to get a free quote. What do you need help with?" }
-  ];
-  const FALLBACK = "Good question — I don't want to guess on that one. The team can confirm: call (941) 527-5924 or send the quote form and you'll get a straight answer. " + CTAS;
-
-  const add = (txt, who) => {
-    const d = document.createElement('div');
-    d.className = 'msg ' + who;
-    if (who === 'bot') d.innerHTML = txt; else d.textContent = txt;
-    log.appendChild(d); log.scrollTop = log.scrollHeight;
-  };
-  const reply = q => {
-    const hit = RULES.find(x => x.k.test(q));
-    setTimeout(() => add(hit ? hit.r : FALLBACK, 'bot'), 350);
-  };
-  const ask = q => { add(q, 'user'); reply(q); };
-
-  const openChat = () => {
-    panel.classList.add('open'); fab.setAttribute('aria-expanded', 'true');
-    if (!log.children.length) add("SOS drywall help is here. Tell me what you're looking at — a hole, crack, ceiling stain, water damage, texture issue, or remodel — and I'll point you to the right next step.", 'bot');
-    input.focus();
-  };
-  const closeChat = () => { panel.classList.remove('open'); fab.setAttribute('aria-expanded', 'false'); fab.focus(); };
-
-  fab.addEventListener('click', () => panel.classList.contains('open') ? closeChat() : openChat());
-  document.getElementById('chatClose').addEventListener('click', closeChat);
-  addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('open')) closeChat(); });
-  document.getElementById('chatStarters').addEventListener('click', e => { if (e.target.tagName === 'BUTTON') ask(e.target.textContent); });
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const q = input.value.trim();
-    if (!q) return;
-    input.value = ''; ask(q);
-  });
-})();
-</script>
-</body>
-</html>
+  <div class="chat-log" id="chatLog" a
