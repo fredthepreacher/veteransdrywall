@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veteran Drywall LLC | Drywall Repair &amp; Texture Matching in North Port &amp; Port Charlotte</title>
+<title>Veteran Drywall LLC | Drywall Repair &amp; Texture Matching in North Port, Port Charlotte &amp; Charlotte County</title>
 <meta name="description" content="Veteran-owned drywall contractor serving North Port, Port Charlotte, Punta Gorda, Venice, Englewood and Sarasota. Drywall repairs, texture matching, water-damaged ceilings, stucco, paint, trim and free estimates.">
 <meta property="og:title" content="Veteran Drywall LLC — Veteran-Owned Drywall Contractor, North Port FL">
 <meta property="og:description" content="Military-grade craftsmanship: drywall repair, texture matching, water damage, stucco, paint &amp; trim. Free quotes. (941) 527-5924.">
@@ -113,10 +113,10 @@ body{font-family:var(--body);color:var(--ink);background:var(--paper);line-heigh
 img{max-width:100%;display:block}
 a{color:inherit}
 h1,h2,h3{font-family:var(--head);line-height:1.05;text-transform:uppercase;letter-spacing:.5px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,3vw,28px)}
 .kicker{display:inline-block;font-family:var(--head);font-weight:600;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .kicker::before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
-section{padding:84px 0}
+section{padding:clamp(64px,8vw,96px) 0}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:19px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:15px 30px;border-radius:8px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:0}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .btn-gold{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:var(--ink)}
@@ -135,7 +135,7 @@ section{padding:84px 0}
 .grid .reveal:nth-child(7){transition-delay:.36s}
 .grid .reveal:nth-child(8){transition-delay:.42s}
 .grid .reveal:nth-child(9){transition-delay:.48s}
-.section-head{margin-bottom:34px}
+.section-head{max-width:760px;margin-bottom:34px}
 .section-head h2{font-size:clamp(34px,4.5vw,52px)}
 .lede{max-width:680px;color:rgba(21,24,29,.75);margin-top:14px;font-size:16.5px}
 .aeo-answer{max-width:720px;margin-top:18px;padding:16px 20px;border-left:3px solid var(--gold);background:rgba(217,166,46,.07);border-radius:0 8px 8px 0;font-size:15.5px;color:rgba(21,24,29,.82)}
@@ -148,8 +148,9 @@ header{position:sticky;top:0;z-index:100;background:rgba(21,24,29,.96);backdrop-
 header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:96px;padding:8px 0}
 .nav .brand{display:flex;align-items:center;flex:0 0 auto;background:transparent;border:0;border-radius:0;padding:0;text-decoration:none;box-shadow:none}
-.nav .brand img{height:72px;width:auto;max-width:min(390px,44vw);object-fit:contain;filter:drop-shadow(0 5px 12px rgba(0,0,0,.45))}
-@media(max-width:600px){.nav{min-height:82px}.nav .brand img{height:54px;max-width:62vw}}
+.nav .brand img{height:72px;width:auto;max-width:min(390px,44vw);object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.55)) drop-shadow(0 0 14px rgba(232,188,85,.18))}
+@media(max-width:760px){.nav{min-height:76px}.nav .brand img{height:54px;max-width:58vw}}
+@media(max-width:420px){.nav .brand img{height:44px;max-width:56vw}}
 .nav-links{display:flex;gap:22px;list-style:none}
 .nav-links a{font-family:var(--head);font-weight:600;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:var(--paper);text-decoration:none;opacity:.85;transition:opacity .15s ease,color .15s ease}
 .nav-links a:hover{color:var(--gold-2);opacity:1}
@@ -162,9 +163,10 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .hero-media{position:absolute;inset:0;z-index:0}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(12,14,18,.94) 0%,rgba(12,14,18,.82) 45%,rgba(12,14,18,.45) 100%)}
-.hero-inner{position:relative;z-index:2;padding:112px 0 108px;max-width:880px}
-.hero h1{font-size:clamp(40px,5.8vw,70px);font-weight:700;color:var(--paper);text-shadow:0 4px 22px rgba(0,0,0,.45)}
+.hero-inner{position:relative;z-index:2;padding:clamp(88px,11vw,132px) 0 clamp(72px,9vw,112px);max-width:920px}
+.hero h1{font-size:clamp(40px,5.2vw,68px);font-weight:700;color:var(--paper);text-shadow:0 4px 22px rgba(0,0,0,.45);max-width:980px;text-wrap:balance}
 .hero h1 em{font-style:normal;color:var(--gold-2)}
+@media(max-width:520px){.hero h1{font-size:clamp(34px,11vw,48px)}}
 .hero p.lead{margin:18px 0 28px;font-size:18px;max-width:580px;color:rgba(245,242,234,.85)}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
 .chip{font-family:var(--head);font-weight:600;font-size:14.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-2);border:1px solid rgba(232,188,85,.45);border-radius:999px;padding:7px 16px;background:rgba(232,188,85,.07)}
@@ -185,6 +187,7 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 @media (prefers-reduced-motion:reduce){
   .strip-track{animation:none}
   .reveal{opacity:1;transform:none;transition:none}
+  .chat-fab-logo{animation:none}
   html{scroll-behavior:auto}
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
 }
@@ -200,18 +203,13 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .card p{font-size:15.5px;color:rgba(21,24,29,.75)}
 .services .grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 
-/* ---------- Official Brand Banner (slim, moved below owner story) ---------- */
-.brand-showcase{background:linear-gradient(135deg,var(--paper-2) 0%,#F2E5C4 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
-.brand-showcase-grid{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.brand-showcase-copy{flex:1 1 320px;min-width:260px}
-.brand-showcase h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:8px;color:var(--ink)}
-.brand-showcase p{max-width:560px;color:rgba(21,24,29,.78);margin-bottom:12px;font-size:14.5px}
-.brand-points{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
-.brand-points span{font-family:var(--head);font-weight:700;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);background:#fff;border:1px solid rgba(217,166,46,.5);border-radius:999px;padding:6px 12px}
-.flyer-card{flex:none;width:120px;height:120px;background:rgba(255,253,247,.9);border:2px solid rgba(217,166,46,.6);border-radius:16px;padding:8px;box-shadow:0 10px 26px rgba(12,14,18,.14);transition:transform .18s ease,box-shadow .18s ease}
-.flyer-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.flyer-card img{width:100%;height:100%;border-radius:10px;object-fit:contain}
-@media(max-width:760px){.brand-showcase-grid{flex-direction:column;text-align:center}.brand-showcase p{margin-left:auto;margin-right:auto}.brand-points{justify-content:center}.brand-showcase .hero-cta{justify-content:center}.flyer-card{order:-1}}
+/* ---------- Mini trust badge strip (inside Why Us — the old full brand-showcase section was folded in here so it no longer reads as a separate dropped-in block) ---------- */
+.why-badge-strip{margin-top:40px;padding-top:30px;border-top:1px solid rgba(245,242,234,.15);display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.why-badge-strip .badge-img{flex:none;width:78px;height:78px;background:rgba(255,253,247,.92);border:2px solid rgba(217,166,46,.6);border-radius:16px;padding:6px;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.why-badge-strip .badge-img img{width:100%;height:100%;object-fit:contain;border-radius:10px}
+.why-badge-strip .badge-points{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 260px}
+.why-badge-strip .badge-points span{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--gold-2);border:1px solid rgba(232,188,85,.4);border-radius:999px;padding:6px 12px;background:rgba(232,188,85,.06)}
+@media(max-width:600px){.why-badge-strip{flex-direction:column;text-align:center}.why-badge-strip .badge-points{justify-content:center}}
 
 /* ---------- Choose Your Drywall Problem ---------- */
 .problems .grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -253,7 +251,19 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
   radial-gradient(circle at 85% 25%, rgba(21,24,29,.16) 0 6px, transparent 7px),
   radial-gradient(circle at 75% 80%, rgba(21,24,29,.2) 0 5px, transparent 6px)}
 
-/* ---------- Water Damage & Small Repairs (merged) ---------- */
+/* ---------- Small Jobs / Priority Repairs (standalone, positioned right after Texture Matching) ---------- */
+.priority{background:linear-gradient(120deg,var(--ink) 0%,#23272F 100%);color:var(--paper);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+.priority h2{color:var(--paper)}
+.priority h2 em{font-style:normal;color:var(--gold-2)}
+.priority p{color:rgba(245,242,234,.82);max-width:700px}
+.priority .aeo-answer{background:rgba(232,188,85,.08);color:rgba(245,242,234,.9)}
+.priority .aeo-answer strong{color:var(--gold-2)}
+.priority-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px 18px;margin:22px 0}
+.priority-list li{font-family:var(--head);font-weight:600;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-2)}
+.priority-list li::before{content:"✓ ";color:var(--paper)}
+.priority-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+
+/* ---------- Water Damage / Storm Damage (standalone, positioned after Veteran Standard) ---------- */
 .waterdamage{background:linear-gradient(120deg,var(--ink) 0%,#23272F 100%);color:var(--paper);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
 .waterdamage h2{color:var(--paper)}
 .waterdamage h2 em{font-style:normal;color:var(--gold-2)}
@@ -338,6 +348,8 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .pm-card{background:rgba(232,188,85,.07);border:1px solid rgba(232,188,85,.35);border-radius:var(--radius);padding:30px}
 .pm-card h3{font-size:22px;color:var(--gold-2);margin-bottom:10px}
 .pm-card p{color:rgba(245,242,234,.82);margin-bottom:18px;font-size:15px}
+.pm .aeo-answer{background:rgba(232,188,85,.08);color:rgba(245,242,234,.9)}
+.pm .aeo-answer strong{color:var(--gold-2)}
 @media(max-width:860px){.pm-grid{grid-template-columns:1fr}.pm ul{grid-template-columns:1fr}}
 
 /* ---------- Reviews CTA ---------- */
@@ -403,10 +415,14 @@ footer{background:var(--ink-2);color:rgba(245,242,234,.75);padding:54px 0 110px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
 /* ---------- Chatbot ---------- */
-.chat-fab{position:fixed;right:18px;bottom:18px;z-index:180;display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,var(--gold-2),var(--gold));color:var(--ink);border:0;border-radius:999px;padding:14px 20px;font-family:var(--head);font-weight:700;font-size:17px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 26px rgba(0,0,0,.3)}
-.chat-fab:hover{transform:translateY(-2px)}
-@media(max-width:760px){.chat-fab{bottom:78px}}
-.chat-panel{position:fixed;right:18px;bottom:84px;z-index:190;width:min(370px,calc(100vw - 24px));max-height:min(560px,calc(100dvh - 120px));background:var(--paper-2);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.chat-fab-logo{position:fixed;right:18px;bottom:18px;z-index:180;width:74px;height:74px;padding:0;border:2px solid var(--gold-2);border-radius:50%;background:radial-gradient(circle at 35% 25%,rgba(232,188,85,.22),rgba(12,14,18,.96) 64%);box-shadow:0 12px 34px rgba(0,0,0,.38);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;animation:sosPulse 6s ease-in-out infinite}
+.chat-fab-logo:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 44px rgba(0,0,0,.45);border-color:var(--gold)}
+.chat-fab-logo img{width:62px;height:62px;border-radius:50%;object-fit:cover;display:block}
+.sos-bubble{position:absolute;top:-18px;right:-6px;min-width:42px;padding:4px 8px;border-radius:999px 999px 999px 4px;background:linear-gradient(180deg,var(--gold-2),var(--gold));color:var(--ink);font-family:var(--head);font-weight:800;font-size:14px;letter-spacing:1px;line-height:1;box-shadow:0 8px 18px rgba(0,0,0,.28)}
+@keyframes sosPulse{0%,72%,100%{transform:scale(1)}78%{transform:scale(1.05)}84%{transform:scale(1)}90%{transform:scale(1.04)}}
+@media(max-width:760px){.chat-fab-logo{bottom:84px;width:66px;height:66px}.chat-fab-logo img{width:55px;height:55px}.sos-bubble{top:-16px;right:-8px;font-size:12px}}
+.chat-panel{position:fixed;right:18px;bottom:100px;z-index:190;width:min(370px,calc(100vw - 24px));max-height:min(560px,calc(100dvh - 130px));background:var(--paper-2);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.35);display:none;flex-direction:column;overflow:hidden}
 .chat-panel.open{display:flex}
 @media(max-width:760px){.chat-panel{bottom:140px}}
 .chat-head{background:var(--ink);color:var(--paper);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
@@ -441,7 +457,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <!-- ================= HEADER ================= -->
 <header id="top">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Veteran Drywall home"><img src="assets/images/veteran-drywall-horizontal-logo.webp" alt="Veteran Drywall LLC official logo" width="1500" height="500"></a>
+    <a class="brand" href="#top" aria-label="Veteran Drywall home"><img src="assets/images/veteran-drywall-header-logo-transparent.webp" alt="Veteran Drywall LLC — USMC veteran-owned drywall contractor" width="1500" height="458"></a>
     <ul class="nav-links">
       <li><a href="#problems">Solutions</a></li>
       <li><a href="#services">Services</a></li>
@@ -592,7 +608,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <span class="kicker">Our Specialty</span>
       <h2>Texture Matching That Makes Repairs Disappear</h2>
       <p class="lede">Patching drywall is one thing. Making the repair disappear is the real craft. We match common Southwest Florida wall and ceiling textures so the repaired area blends with the surrounding surface.</p>
-      <p class="aeo-answer"><strong>What is drywall texture matching?</strong> It's reproducing the exact pattern already on your wall or ceiling — knockdown, orange peel, skip trowel, popcorn, or smooth/Level 5 — over a drywall repair, so the patch disappears once it's painted instead of standing out as a flat or mismatched spot.</p>
+      <p class="aeo-answer"><strong>Who does texture matching in North Port?</strong> Veteran Drywall LLC specializes in texture matching for North Port homes and businesses — knockdown, orange peel, skip trowel, popcorn, and smooth/Level 5 finishes. We reproduce the exact pattern already on your wall or ceiling so a drywall repair disappears instead of standing out once it's painted.</p>
     </div>
     <div class="grid">
       <div class="texture-card reveal"><div class="tex-swatch tex-knockdown"></div><h3>Knockdown</h3><p>The most common Florida wall/ceiling texture — troweled-down stucco pattern with soft, flattened peaks.</p></div>
@@ -609,20 +625,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
-<!-- ================= WATER DAMAGE & SMALL REPAIRS (merged) ================= -->
-<section class="waterdamage" id="water-damage" aria-labelledby="wd-h">
+<!-- ================= SMALL JOBS / PRIORITY REPAIRS ================= -->
+<section class="priority" id="priority" aria-labelledby="priority-h">
   <div class="wrap">
-    <span class="kicker">Small Jobs Welcome &amp; Storm/Water Repair</span>
-    <h2 id="wd-h" style="font-size:clamp(30px,4vw,44px);margin-bottom:14px">Holes, Cracks &amp; Water-Damaged Drywall? <em>We Fix That.</em></h2>
-    <p>No job is too small — doorknob holes, settlement cracks and stained ceilings are core to what we do. Southwest Florida also throws a lot at a roof and a wall, so we repair the drywall and ceilings left behind by:</p>
-    <ul class="wd-causes">
-      <li>Plumbing Leaks</li><li>AC Pan Leaks</li><li>Roof Leaks</li><li>Storm Damage</li><li>Stained Ceilings</li><li>Soft Drywall</li><li>Re-Pipe Patches</li><li>Ceiling Cracks</li>
+    <span class="kicker">Small Jobs Welcome</span>
+    <h2 id="priority-h" style="font-size:clamp(30px,4vw,44px);margin-bottom:14px">Holes, Cracks &amp; Ceiling Stains? <em>We Fix That.</em></h2>
+    <p>No job is too small. Doorknob holes, hairline cracks, nail pops and small ceiling stains are a core part of what we do every week across North Port, Port Charlotte and Charlotte County — not just full remodels.</p>
+    <ul class="priority-list">
+      <li>Doorknob Holes</li><li>Hairline Cracks</li><li>Nail Pops</li><li>Ceiling Stains</li><li>Texture Blending</li><li>Popcorn Ceiling</li>
     </ul>
-    <p class="aeo-answer"><strong>How do you repair water-damaged drywall?</strong> Once the leak is stopped and the area is fully dry, we cut out and replace the damaged drywall, re-tape and finish the joints, match the surrounding texture, then prime and paint — restoring the wall or ceiling to its original look.</p>
-    <div class="wd-safety">If the leak is active or you suspect mold, electrical, or structural issues, those should be addressed first by the right professional. Once the area is safe and dry, we repair and finish the drywall.</div>
-    <div class="wd-cta">
-      <a class="btn btn-gold" href="tel:+19415275924">&#9742; Call for Water-Damage Repair</a>
-      <a class="btn btn-ghost" href="#quote">Request a Free Quote</a>
+    <p class="aeo-answer"><strong>Who fixes drywall holes in Port Charlotte?</strong> Veteran Drywall LLC repairs drywall holes throughout Port Charlotte and the surrounding area — doorknob dings, dents and larger openings from accidents or repairs. We patch, sand and texture-match the area so the repair blends into the surrounding wall or ceiling, then it's ready for paint.</p>
+    <div class="priority-cta">
+      <a class="btn btn-gold" href="#quote">Request a Free Quote</a>
+      <a class="btn btn-ghost" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
     </div>
   </div>
 </section>
@@ -642,47 +657,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <img src="https://static.wixstatic.com/media/e64608_6b4a976732a4444083bcff38d09b3f2d~mv2.jpeg/v1/crop/x_31,y_0,w_976,h_1464/fill/w_600,h_900,al_c,q_85,enc_avif,quality_auto/IMG_2958.jpeg" alt="Steven McPherson, USMC veteran and owner of Veteran Drywall" loading="lazy" width="600" height="750">
     </div>
   </div>
-</section>
-
-<!-- ================= TEAM ================= -->
-<section class="team" id="team">
-  <div class="wrap">
-    <span class="kicker">The Crew</span>
-    <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Meet the Team</h2>
-    <div class="grid">
-      <div class="member reveal">
-        <img loading="lazy" width="450" height="600" alt="Steven — Owner, USMC Veteran" src="https://static.wixstatic.com/media/e64608_87fe072f45714232a885f0d9cbcc2f9b~mv2.jpg/v1/crop/x_286,y_333,w_968,h_1346/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A0926-Enhanced-NR-2.jpg">
-        <h3>Steven</h3><span>Owner · USMC Veteran</span>
-      </div>
-      <div class="member reveal">
-        <img loading="lazy" width="450" height="600" alt="Mike — Drywall specialist" src="https://static.wixstatic.com/media/e64608_de52f63f0c9a4f7a9e53040ad5f8eec5~mv2.jpg/v1/crop/x_130,y_288,w_1074,h_1140/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A0996-Enhanced-NR-2.jpg">
-        <h3>Mike</h3><span>Finisher</span>
-      </div>
-      <div class="member reveal">
-        <img loading="lazy" width="450" height="600" alt="Rick — Drywall specialist" src="https://static.wixstatic.com/media/e64608_57efbb2283754d0ba2eba70814b2673c~mv2.jpg/v1/crop/x_155,y_208,w_1112,h_1237/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A1121-Enhanced-NR-2.jpg">
-        <h3>Rick</h3><span>Finisher</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= OFFICIAL BRAND BANNER (slim, placed after the owner story — not immediately after the hero) ================= -->
-<section class="brand-showcase" id="brand-showcase" aria-labelledby="brand-showcase-h">
-  <div class="wrap brand-showcase-grid">
-    <div class="flyer-card reveal">
-      <img src="assets/images/veteran-drywall-badge-logo.webp" alt="Veteran Drywall flyer-style badge with American flag, kneeling soldier, cross, John 15:13, services and license number" width="980" height="980" loading="lazy">
-    </div>
-    <div class="brand-showcase-copy">
-      <span class="kicker">Official Veteran Drywall Mark</span>
-      <h2 id="brand-showcase-h">Veteran Identity. Florida Finish Work.</h2>
-      <p>This flyer-style badge keeps the original Veteran Drywall DNA — the distressed American flag, kneeling soldier, cross, John 15:13 and bold gold lettering.</p>
-      <div class="brand-points" aria-label="Veteran Drywall quick facts">
-        <span>USMC Veteran Owned</span><span>One Stop Shop</span><span>Free Estimates</span><span>Lic # SCC131152687</span>
-      </div>
-      <div class="hero-cta">
-        <a class="btn btn-gold btn-sm" href="#quote">Request a Free Quote</a>
-        <a class="btn btn-sm" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">Call (941) 527-5924</a>
-      </div>
+  <!-- Official flyer/badge mark folded in here as a small trust strip instead of its own full-width section -->
+  <div class="wrap why-badge-strip reveal">
+    <div class="badge-img"><img src="assets/images/veteran-drywall-badge-logo.webp" alt="Veteran Drywall official flyer-style badge with American flag, kneeling soldier, cross and John 15:13" width="200" height="200" loading="lazy"></div>
+    <div class="badge-points" aria-label="Veteran Drywall quick facts">
+      <span>USMC Veteran Owned</span><span>One Stop Shop</span><span>Free Estimates</span><span>Lic # SCC131152687</span>
     </div>
   </div>
 </section>
@@ -704,6 +683,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="hero-cta" style="margin-top:34px">
       <a class="btn btn-gold" href="#quote">Request a Free Quote</a>
       <a class="btn" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WATER DAMAGE / STORM DAMAGE ================= -->
+<section class="waterdamage" id="water-damage" aria-labelledby="wd-h">
+  <div class="wrap">
+    <span class="kicker">Storm &amp; Leak Repair</span>
+    <h2 id="wd-h" style="font-size:clamp(30px,4vw,44px);margin-bottom:14px">Water-Damaged Drywall &amp; Ceiling Repairs</h2>
+    <p>Southwest Florida throws a lot at a roof and a wall. We repair the drywall and ceilings left behind by:</p>
+    <ul class="wd-causes">
+      <li>Plumbing Leaks</li><li>AC Pan Leaks</li><li>Roof Leaks</li><li>Storm Damage</li><li>Stained Ceilings</li><li>Soft Drywall</li><li>Re-Pipe Patches</li><li>Ceiling Cracks</li>
+    </ul>
+    <p class="aeo-answer"><strong>Can drywall ceiling water damage be repaired?</strong> Yes. Once a leak is stopped and the area is fully dry, we cut out and replace the damaged drywall, re-tape and finish the joints, match the surrounding texture, then prime and paint — restoring the wall or ceiling to its original look.</p>
+    <div class="wd-safety">If the leak is active or you suspect mold, electrical, or structural issues, those should be addressed first by the right professional. Once the area is safe and dry, we repair and finish the drywall.</div>
+    <div class="wd-cta">
+      <a class="btn btn-gold" href="tel:+19415275924">&#9742; Call for Water-Damage Repair</a>
+      <a class="btn btn-ghost" href="#quote">Request a Free Quote</a>
     </div>
   </div>
 </section>
@@ -753,6 +750,41 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
+<!-- ================= PROCESS / HOW IT WORKS ================= -->
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="kicker">How It Works</span>
+    <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Three Steps. Zero Runaround.</h2>
+    <div class="grid">
+      <div class="step reveal"><b>1</b><h3>Call or Request a Quote</h3><p>Tell us about the job — a photo helps. We respond fast with a straight answer and a fair, written estimate. No pressure, no games.</p></div>
+      <div class="step reveal"><b>2</b><h3>We Schedule &amp; Show Up</h3><p>You get a firm date and we keep it. We protect your floors and furniture, work clean, and communicate every step.</p></div>
+      <div class="step reveal"><b>3</b><h3>Flawless Finish, Guaranteed Walkthrough</h3><p>We don't call it done until you've walked the job with us and it meets the standard we'd demand in our own homes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="team" id="team">
+  <div class="wrap">
+    <span class="kicker">The Crew</span>
+    <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Meet the Team</h2>
+    <div class="grid">
+      <div class="member reveal">
+        <img loading="lazy" width="450" height="600" alt="Steven — Owner, USMC Veteran" src="https://static.wixstatic.com/media/e64608_87fe072f45714232a885f0d9cbcc2f9b~mv2.jpg/v1/crop/x_286,y_333,w_968,h_1346/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A0926-Enhanced-NR-2.jpg">
+        <h3>Steven</h3><span>Owner · USMC Veteran</span>
+      </div>
+      <div class="member reveal">
+        <img loading="lazy" width="450" height="600" alt="Mike — Drywall specialist" src="https://static.wixstatic.com/media/e64608_de52f63f0c9a4f7a9e53040ad5f8eec5~mv2.jpg/v1/crop/x_130,y_288,w_1074,h_1140/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A0996-Enhanced-NR-2.jpg">
+        <h3>Mike</h3><span>Finisher</span>
+      </div>
+      <div class="member reveal">
+        <img loading="lazy" width="450" height="600" alt="Rick — Drywall specialist" src="https://static.wixstatic.com/media/e64608_57efbb2283754d0ba2eba70814b2673c~mv2.jpg/v1/crop/x_155,y_208,w_1112,h_1237/fill/w_450,h_600,al_c,q_85,enc_avif,quality_auto/6C0A1121-Enhanced-NR-2.jpg">
+        <h3>Rick</h3><span>Finisher</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PROPERTY MANAGER / REALTOR ================= -->
 <section class="pm" id="property-managers">
   <div class="wrap pm-grid">
@@ -770,6 +802,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <p>Send us the address list or walkthrough photos and we'll turn around a straight quote — no chasing subs, no surprises at the walkthrough.</p>
       <a class="btn btn-gold" href="#quote">Request Punch-List Quote</a>
     </div>
+  </div>
+  <div class="wrap">
+    <p class="aeo-answer"><strong>Do you work with property managers?</strong> Yes. Veteran Drywall LLC regularly partners with property managers, landlords and realtors on tenant-damage repairs, move-out punch lists and listing prep — fast turnaround and clean communication, with documentation available for HOAs when needed.</p>
   </div>
 </section>
 
@@ -853,19 +888,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <!-- ================= TESTIMONIALS (hidden until real reviews exist) =================
      TODO (Owner): provide Google Business Profile link + 2–3 real reviews with permission.
      Do NOT populate with invented reviews. Facebook CTA above serves as social proof for now. -->
-
-<!-- ================= PROCESS (placed right before the quote form so visitors know what happens next) ================= -->
-<section class="process" id="process">
-  <div class="wrap">
-    <span class="kicker">What Happens Next</span>
-    <h2 style="font-size:clamp(34px,4.5vw,52px);margin-bottom:34px">Three Steps. Zero Runaround.</h2>
-    <div class="grid">
-      <div class="step reveal"><b>1</b><h3>Call or Request a Quote</h3><p>Tell us about the job — a photo helps. We respond fast with a straight answer and a fair, written estimate. No pressure, no games.</p></div>
-      <div class="step reveal"><b>2</b><h3>We Schedule &amp; Show Up</h3><p>You get a firm date and we keep it. We protect your floors and furniture, work clean, and communicate every step.</p></div>
-      <div class="step reveal"><b>3</b><h3>Flawless Finish, Guaranteed Walkthrough</h3><p>We don't call it done until you've walked the job with us and it meets the standard we'd demand in our own homes.</p></div>
-    </div>
-  </div>
-</section>
 
 <!-- ================= QUOTE ================= -->
 <section id="quote">
@@ -983,7 +1005,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 <!-- ================= CHATBOT (rule-based, no API key — see README-DEPLOY.md
      for upgrading to an AI backend via Netlify Function + env var) ================= -->
-<button class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chatPanel">&#128172; Need Help?</button>
+<button class="chat-fab-logo" id="chatFab" aria-expanded="false" aria-controls="chatPanel" aria-label="SOS Drywall Help — open Veteran Drywall website assistant">
+  <span class="sos-bubble" aria-hidden="true">SOS</span>
+  <img src="assets/images/veteran-drywall-chat-sos-icon.webp" alt="" width="72" height="72" loading="eager" decoding="async">
+  <span class="sr-only">Open Veteran Drywall website assistant</span>
+</button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-label="Veteran Drywall assistant">
   <div class="chat-head">
     <div><b>Veteran Drywall</b><small>Website Assistant</small></div>
@@ -992,10 +1018,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="chat-log" id="chatLog" aria-live="polite"></div>
   <div class="chat-starters" id="chatStarters">
     <button type="button">I have water-damaged drywall</button>
-    <button type="button">Can you match my texture?</button>
-    <button type="button">I need a ceiling repaired</button>
+    <button type="button">I need texture matched</button>
+    <button type="button">I have a ceiling stain</button>
+    <button type="button">I need a hole patched</button>
     <button type="button">Can I send photos?</button>
-    <button type="button">Do you work in Port Charlotte?</button>
+    <button type="button">Do you serve Port Charlotte?</button>
     <button type="button">I'm a property manager</button>
   </div>
   <form class="chat-input" id="chatForm">
@@ -1110,7 +1137,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   const RULES = [
     { k: /mold|electrical|structural|foundation/i, r: "Important: if you suspect mold, an electrical hazard, or a structural issue, that needs the right licensed professional first — please have it checked before drywall repair begins. Once the area is safe and dry, we handle the drywall and finish. " + CTAS },
     { k: /water|leak|flood|storm|soft wall|soft drywall|stain/i, r: "We repair water-damaged drywall and ceilings from plumbing leaks, AC pan leaks, roof leaks and storm damage, then blend the texture. If the leak is still active or you suspect mold/electrical/structural issues, address that first — then we make the walls look new again. " + CTAS },
-    { k: /urgent|emergency|asap|today/i, r: "The fastest route is a call — Steven answers his own phone: (941) 527-5924 (alternate: (941) 929-3545). For scheduling specifics, the team will confirm availability directly. " + CTAS },
+    { k: /urgent|emergency|asap|today/i, r: "For fastest help, call Veteran Drywall directly at (941) 527-5924. If there is an active leak, mold concern, electrical issue, or structural concern, address that first with the right professional. Once safe and dry, Veteran Drywall can repair and finish the wall or ceiling. " + CTAS },
     { k: /popcorn/i, r: "Yes — we remove popcorn ceilings and refinish smooth, knockdown, or matched to your preference. " + CTAS },
     { k: /texture|knockdown|orange peel|skip trowel|level.?5|match/i, r: "Yes — texture matching is our specialty: knockdown, orange peel, skip trowel, smooth/level-5 and stucco texture. Repairs blend in so you can't spot them. " + CTAS },
     { k: /ceiling/i, r: "Yes, we repair and refinish drywall ceilings — cracks, sagging, stains and texture blending so the repair disappears. " + CTAS },
@@ -1144,7 +1171,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
   const openChat = () => {
     panel.classList.add('open'); fab.setAttribute('aria-expanded', 'true');
-    if (!log.children.length) add("Welcome to Veteran Drywall — USMC-veteran owned, serving North Port &amp; Southwest Florida. Ask me anything, or tap a question below.", 'bot');
+    if (!log.children.length) add("SOS drywall help is here. Tell me what you're looking at — a hole, crack, ceiling stain, water damage, texture issue, or remodel — and I'll point you to the right next step.", 'bot');
     input.focus();
   };
   const closeChat = () => { panel.classList.remove('open'); fab.setAttribute('aria-expanded', 'false'); fab.focus(); };
