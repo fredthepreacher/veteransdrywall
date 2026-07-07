@@ -20,3 +20,10 @@ Target filenames (SEO-friendly, matches the download script):
 - `venice-fl-remodeling-project.webp`
 - `stucco-repair-exterior-charlotte-county.webp`
 - `drywall-ceiling-repair-charlotte-county.webp`
+
+
+## Added official logo assets (2026-07-07)
+- veteran-drywall-horizontal-logo.webp/png — main header and hero logo based on approved flag/soldier/cross brand direction.
+- veteran-drywall-badge-logo.webp/png — flyer-style badge used in the brand showcase and favicon generation.
+- veteran-drywall-social-preview.jpg/webp — self-hosted Open Graph preview image.
+- veteran-drywall-icon-192.png and veteran-drywall-icon-512.png — favicon/app icon assets.
