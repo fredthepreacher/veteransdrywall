@@ -17,9 +17,13 @@
 <link rel="canonical" href="https://veteransdrywall.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://static.wixstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="alternate icon" href="logo-badge.svg">
+<!-- Hero image preloaded + rendered eagerly (not lazy-loaded) since it's the LCP element.
+     TODO (owner/dev): once self-hosted, point this at /assets/images/north-port-drywall-repair-hero.avif (or .webp) instead. -->
+<link rel="preload" as="image" fetchpriority="high" href="https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg">
 
 <script type="application/ld+json">
 {
@@ -125,8 +129,9 @@ section{padding:84px 0}
 /* ---------- Header ---------- */
 header{position:sticky;top:0;z-index:100;background:rgba(21,24,29,.96);backdrop-filter:blur(8px);transition:box-shadow .2s}
 header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
-.nav .brand img{height:46px;width:auto}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:86px}
+.nav .brand img{height:60px;width:auto}
+@media(max-width:600px){.nav .brand img{height:50px}}
 .nav-links{display:flex;gap:22px;list-style:none}
 .nav-links a{font-family:var(--head);font-weight:600;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:var(--paper);text-decoration:none;opacity:.85}
 .nav-links a:hover{color:var(--gold-2);opacity:1}
@@ -135,16 +140,17 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;background:var(--ink);color:var(--paper);padding:0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:
-  linear-gradient(100deg,rgba(12,14,18,.94) 0%,rgba(12,14,18,.82) 45%,rgba(12,14,18,.45) 100%),
-  url("https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg") center/cover no-repeat}
-.hero-inner{position:relative;padding:110px 0 96px;max-width:760px}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(12,14,18,.94) 0%,rgba(12,14,18,.82) 45%,rgba(12,14,18,.45) 100%)}
+.hero-inner{position:relative;z-index:2;padding:110px 0 96px;max-width:760px}
 .hero h1{font-size:clamp(38px,5.6vw,66px);font-weight:700;color:var(--paper)}
 .hero h1 em{font-style:normal;color:var(--gold-2)}
 .hero p.lead{margin:18px 0 28px;font-size:18px;max-width:580px;color:rgba(245,242,234,.85)}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
 .chip{font-family:var(--head);font-weight:600;font-size:14.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-2);border:1px solid rgba(232,188,85,.45);border-radius:999px;padding:7px 16px;background:rgba(232,188,85,.07)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+@media(max-width:480px){.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{width:100%;justify-content:center}}
 .stats{position:relative;display:flex;flex-wrap:wrap;gap:0;margin-top:56px;border-top:1px solid rgba(245,242,234,.15)}
 .stat{padding:22px 34px 0 0;margin-right:34px}
 .stat b{display:block;font-family:var(--head);font-size:40px;font-weight:700;color:var(--gold-2);line-height:1}
@@ -156,7 +162,13 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .strip span{font-family:var(--head);font-weight:700;font-size:19px;letter-spacing:3px;text-transform:uppercase;color:var(--ink);padding:0 26px;position:relative}
 .strip span::after{content:"★";position:absolute;right:-9px;font-size:13px;top:4px;color:var(--ink)}
 @keyframes marquee{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.strip-track{animation:none}}
+.strip:hover .strip-track,.strip:focus-within .strip-track{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){
+  .strip-track{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 
 /* ---------- Generic grid/card ---------- */
 .grid{display:grid;gap:22px}
@@ -254,6 +266,7 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .gallery figure:hover::after{opacity:1}
 .gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,rgba(12,14,18,.88),transparent);color:var(--paper);font-size:12.5px;padding:26px 12px 10px;opacity:0;transition:opacity .2s}
 .gallery figure:hover figcaption{opacity:1}
+.gallery figure .gcat{position:absolute;top:10px;left:10px;z-index:2;background:rgba(12,14,18,.82);color:var(--gold-2);font-family:var(--head);font-weight:600;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid rgba(232,188,85,.5)}
 .lightbox{position:fixed;inset:0;background:rgba(12,14,18,.94);display:none;align-items:center;justify-content:center;z-index:200;padding:4vh 4vw}
 .lightbox.open{display:flex}
 .lightbox img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
@@ -315,7 +328,7 @@ form .btn{width:100%;justify-content:center;margin-top:22px}
 /* ---------- Footer ---------- */
 footer{background:var(--ink-2);color:rgba(245,242,234,.75);padding:54px 0 110px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;align-items:flex-start}
-.foot img{height:52px;margin-bottom:14px}
+.foot img{height:64px;width:auto;margin-bottom:14px}
 .foot small{display:block;font-size:13px;line-height:1.8}
 .foot a{color:var(--gold-2);text-decoration:none}
 .foot .verse-foot{font-style:italic;color:var(--gold-2);font-size:14px;margin-top:8px}
@@ -323,7 +336,7 @@ footer{background:var(--ink-2);color:rgba(245,242,234,.75);padding:54px 0 110px}
 /* ---------- Accessibility ---------- */
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--ink);font-family:var(--head);font-weight:700;letter-spacing:2px;padding:12px 20px;z-index:300;border-radius:0 0 8px 0}
 .skip-link:focus{left:0}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
 /* ---------- Emergency / priority repair callout ---------- */
 .priority{background:linear-gradient(120deg,var(--ink) 0%,#23272F 100%);color:var(--paper);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:56px 0}
@@ -416,7 +429,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 <!-- ================= HERO ================= -->
 <section class="hero" aria-label="Intro">
-  <div class="hero-bg" role="presentation"></div>
+  <div class="hero-media" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg">
+      <!-- TODO (owner/dev): swap for /assets/images/north-port-drywall-repair-hero.webp + .avif once self-hosted -->
+      <img src="https://static.wixstatic.com/media/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85/e64608_65906d5cf39a407e832716c46caa1604~mv2.jpg" alt="" width="1600" height="1000" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="hero-overlay" role="presentation"></div>
   <div class="wrap hero-inner">
     <span class="kicker">USMC Veteran Owned &amp; Operated · North Port, FL</span>
     <h1>Drywall Repair &amp; Texture Matching in <em>North Port, Port Charlotte &amp; Charlotte County</em></h1>
@@ -552,6 +572,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="texture-card reveal"><div class="tex-swatch tex-level5"></div><h3>Smooth / Level 5</h3><p>A flat, smooth finish with no texture — the most demanding standard, done right for a clean modern look.</p></div>
       <div class="texture-card reveal"><div class="tex-swatch tex-stucco"></div><h3>Stucco Texture</h3><p>Exterior stucco patterns matched so patched areas don't stand out against sun-faded surfaces.</p></div>
     </div>
+    <div class="hero-cta" style="margin-top:34px">
+      <a class="btn btn-gold" href="#quote">Get a Texture-Matched Quote</a>
+      <a class="btn" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
+    </div>
   </div>
 </section>
 
@@ -604,6 +628,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="step reveal"><b>3</b><h3>Precision Finish</h3><p>Tape, mud, sand, texture, and finish work done with attention to detail.</p></div>
       <div class="step reveal"><b>4</b><h3>Final Walkthrough</h3><p>We don't call it complete until the finish meets the standard we demand of ourselves.</p></div>
     </div>
+    <div class="hero-cta" style="margin-top:34px">
+      <a class="btn btn-gold" href="#quote">Request a Free Quote</a>
+      <a class="btn" style="background:transparent;border:2px solid var(--ink);color:var(--ink)" href="tel:+19415275924">&#9742; Call (941) 527-5924</a>
+    </div>
   </div>
 </section>
 
@@ -641,15 +669,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <!-- Photos hotlinked from Wix CDN — TODO (owner/dev): download originals and self-host in /img before cancelling Wix.
          Automated download was not possible from this session (sandbox network is allowlisted and blocks the Wix CDN + Netlify domains) — export the media library from Wix or resave the originals locally, then swap these src values for local paths. -->
     <div class="grid" id="galleryGrid">
-      <figure class="reveal" data-cat="repairs"><img loading="lazy" width="960" height="960" alt="Finished drywall project" src="https://static.wixstatic.com/media/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg"><figcaption>Drywall repair — patched &amp; finished</figcaption></figure>
-      <figure class="reveal" data-cat="texture"><img loading="lazy" width="960" height="960" alt="Drywall finishing work" src="https://static.wixstatic.com/media/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg"><figcaption>Drywall finishing work</figcaption></figure>
-      <figure class="reveal" data-cat="texture"><img loading="lazy" width="960" height="960" alt="Texture and finish detail" src="https://static.wixstatic.com/media/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png"><figcaption>Texture matching detail</figcaption></figure>
-      <figure class="reveal" data-cat="remodels"><img loading="lazy" width="960" height="960" alt="Completed interior project" src="https://static.wixstatic.com/media/e64608_2410a06b767d4f499e9cb0bae6638a55~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_2410a06b767d4f499e9cb0bae6638a55~mv2.png"><figcaption>Completed interior remodel</figcaption></figure>
-      <figure class="reveal" data-cat="repairs"><img loading="lazy" width="960" height="960" alt="Drywall installation" src="https://static.wixstatic.com/media/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg"><figcaption>Drywall installation</figcaption></figure>
-      <figure class="reveal" data-cat="painting"><img loading="lazy" width="960" height="960" alt="Finish and paint work" src="https://static.wixstatic.com/media/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg"><figcaption>Paint &amp; finish work</figcaption></figure>
-      <figure class="reveal" data-cat="remodels"><img loading="lazy" width="960" height="960" alt="Remodeling project" src="https://static.wixstatic.com/media/e64608_d71299b1e4ef4169b25cfba0c351571f~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_d71299b1e4ef4169b25cfba0c351571f~mv2.jpeg"><figcaption>Remodeling project</figcaption></figure>
-      <figure class="reveal" data-cat="stucco"><img loading="lazy" width="960" height="960" alt="Stucco and exterior work" src="https://static.wixstatic.com/media/e64608_85da5961321a4b1580295432f77a58dc~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_85da5961321a4b1580295432f77a58dc~mv2.jpeg"><figcaption>Stucco &amp; exterior work</figcaption></figure>
-      <figure class="reveal" data-cat="ceilings"><img loading="lazy" width="960" height="960" alt="Finished wall detail" src="https://static.wixstatic.com/media/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg"><figcaption>Ceiling repair detail</figcaption></figure>
+      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="Drywall patch repair, finished and sanded smooth — North Port area project" src="https://static.wixstatic.com/media/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_cdfda03a4f6948f5bab48a8df4e4171d~mv2.jpeg"><figcaption>Drywall repair — patched &amp; finished</figcaption></figure>
+      <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Drywall texture finishing work matched to surrounding wall" src="https://static.wixstatic.com/media/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_78e9fe73a173465cac4988ad8c1ad8f7~mv2.jpeg"><figcaption>Drywall finishing work</figcaption></figure>
+      <figure class="reveal" data-cat="texture"><span class="gcat">Texture Matching</span><img loading="lazy" width="960" height="960" alt="Close-up of matched wall texture after drywall repair" src="https://static.wixstatic.com/media/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_58ca186cb9cb41db98441e75e91643d3~mv2.png"><figcaption>Texture matching detail</figcaption></figure>
+      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><img loading="lazy" width="960" height="960" alt="Completed interior remodel with new drywall and paint" src="https://static.wixstatic.com/media/e64608_2410a06b767d4f499e9cb0bae6638a55~mv2.png/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_2410a06b767d4f499e9cb0bae6638a55~mv2.png"><figcaption>Completed interior remodel</figcaption></figure>
+      <figure class="reveal" data-cat="repairs"><span class="gcat">Repairs</span><img loading="lazy" width="960" height="960" alt="New drywall installation, hung and taped" src="https://static.wixstatic.com/media/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_c2bdd0b4b08641f79dbd3b66a48d945e~mv2.jpeg"><figcaption>Drywall installation</figcaption></figure>
+      <figure class="reveal" data-cat="painting"><span class="gcat">Painting</span><img loading="lazy" width="960" height="960" alt="Interior paint and drywall finish work, sharp clean lines" src="https://static.wixstatic.com/media/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_5808502a2bc3433cbb114d5d7a08c541~mv2.jpeg"><figcaption>Paint &amp; finish work</figcaption></figure>
+      <figure class="reveal" data-cat="remodels"><span class="gcat">Remodels</span><img loading="lazy" width="960" height="960" alt="Remodeling project, drywall and framing work in progress" src="https://static.wixstatic.com/media/e64608_d71299b1e4ef4169b25cfba0c351571f~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_d71299b1e4ef4169b25cfba0c351571f~mv2.jpeg"><figcaption>Remodeling project</figcaption></figure>
+      <figure class="reveal" data-cat="stucco"><span class="gcat">Stucco</span><img loading="lazy" width="960" height="960" alt="Stucco repair matched to existing exterior texture" src="https://static.wixstatic.com/media/e64608_85da5961321a4b1580295432f77a58dc~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_85da5961321a4b1580295432f77a58dc~mv2.jpeg"><figcaption>Stucco &amp; exterior work</figcaption></figure>
+      <figure class="reveal" data-cat="ceilings"><span class="gcat">Ceilings</span><img loading="lazy" width="960" height="960" alt="Drywall ceiling repair with texture blended in" src="https://static.wixstatic.com/media/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/e64608_fe8282cedfc643fba95f606a19c3440e~mv2.jpeg"><figcaption>Ceiling repair detail</figcaption></figure>
     </div>
   </div>
 </section>
@@ -897,7 +925,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <footer>
   <div class="wrap foot">
     <div>
-      <img src="logo.svg" alt="Veteran Drywall LLC" style="filter:invert(1) hue-rotate(180deg) saturate(0)">
+      <img src="logo.svg" alt="Veteran Drywall LLC" width="230" height="77">
       <small>Veteran Drywall LLC · Lic # SCC131152687<br>5390 Halkett Ter, North Port, FL 34286<br><a href="tel:+19415275924">(941) 527-5924</a> · <a href="mailto:info@veteransdrywall.net">info@veteransdrywall.net</a><br>Alternate: <a href="tel:+19419293545">(941) 929-3545</a></small>
       <p class="verse-foot">"Greater love hath no man than this…" — John 15:13</p>
     </div>
@@ -954,28 +982,53 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Lightbox (respects current gallery filter)
+// Lightbox (respects current gallery filter) — keyboard accessible with focus trap
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
+const lbFocusable = [...lb.querySelectorAll('button')];
 let shots = [...document.querySelectorAll('#galleryGrid figure:not(.hide) img')];
 let idx = 0;
+let lastTrigger = null;
 const show = i => { idx = (i + shots.length) % shots.length; lbImg.src = shots[idx].src; lbImg.alt = shots[idx].alt; };
+const openLightbox = (i, triggerEl) => {
+  lastTrigger = triggerEl || document.activeElement;
+  show(i);
+  lb.classList.add('open');
+  lb.querySelector('.lb-close').focus();
+};
+const closeLightbox = () => {
+  lb.classList.remove('open');
+  if (lastTrigger && document.body.contains(lastTrigger)) lastTrigger.focus();
+};
 const bindGallery = () => {
   shots = [...document.querySelectorAll('#galleryGrid figure:not(.hide) img')];
   shots.forEach((img, i) => {
-    img.closest('figure').onclick = () => { show(i); lb.classList.add('open'); };
+    const fig = img.closest('figure');
+    fig.setAttribute('tabindex', '0');
+    fig.setAttribute('role', 'button');
+    fig.setAttribute('aria-label', 'View enlarged: ' + (img.alt || 'project photo'));
+    fig.onclick = () => openLightbox(i, fig);
+    fig.onkeydown = e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i, fig); }
+    };
   });
 };
 bindGallery();
-lb.querySelector('.lb-close').addEventListener('click', () => lb.classList.remove('open'));
+lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
 lb.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
 lb.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
-lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
 addEventListener('keydown', e => {
   if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'Escape') { closeLightbox(); return; }
   if (e.key === 'ArrowLeft') show(idx - 1);
   if (e.key === 'ArrowRight') show(idx + 1);
+  if (e.key === 'Tab') {
+    // simple focus trap among the lightbox's buttons
+    const first = lbFocusable[0], last = lbFocusable[lbFocusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
 // Gallery filters
