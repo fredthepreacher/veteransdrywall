@@ -1,83 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560" role="img" aria-label="Veteran Drywall LLC badge">
-  <!-- ============ STACKED BADGE — shirt-style / social avatar / flyer ============
-       Distressed flag disc, kneeling soldier + battlefield cross, JOHN 15:13 banner,
-       phone + license + services. Colors: #15181D / #D9A62E–#E8BC55 / #F5F2EA -->
-  <defs>
-    <clipPath id="bdisc"><circle cx="210" cy="190" r="126"/></clipPath>
-    <linearGradient id="bgold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#E8BC55"/><stop offset="1" stop-color="#D9A62E"/>
-    </linearGradient>
-    <path id="arcTop" d="M210 62a128 128 0 0 1 128 128" fill="none"/>
-    <path id="arcTopL" d="M82 190a128 128 0 0 1 128-128" fill="none"/>
-  </defs>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Veteran Drywall LLC emblem — kneeling soldier battlefield cross, John 15:13">
+<defs>
+  <radialGradient id="bgFade" cx="50%" cy="42%" r="65%">
+    <stop offset="0%" stop-color="#20242C"/>
+    <stop offset="100%" stop-color="#0C0E12"/>
+  </radialGradient>
+  <linearGradient id="goldFade" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#E8BC55"/>
+    <stop offset="100%" stop-color="#D9A62E"/>
+  </linearGradient>
+  <path id="arcTop" d="M 66,214 A 148,148 0 1 1 334,214"/>
+  <clipPath id="circleClip"><circle cx="200" cy="200" r="182"/></clipPath>
+</defs>
 
-  <rect width="420" height="560" rx="18" fill="#15181D"/>
-  <rect x="10" y="10" width="400" height="540" rx="12" fill="none" stroke="url(#bgold)" stroke-width="2" opacity=".6"/>
+<!-- outer rings -->
+<circle cx="200" cy="200" r="196" fill="#0C0E12" stroke="url(#goldFade)" stroke-width="5"/>
+<circle cx="200" cy="200" r="182" fill="url(#bgFade)" stroke="#D9A62E" stroke-width="1.5"/>
 
-  <!-- Arched company name -->
-  <text font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="34" font-weight="700" letter-spacing="6" fill="#F5F2EA">
-    <textPath href="#arcTopL" startOffset="8%">VETERAN</textPath>
-  </text>
-  <text font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="34" font-weight="700" letter-spacing="6" fill="url(#bgold)">
-    <textPath href="#arcTop" startOffset="14%">DRYWALL</textPath>
-  </text>
-
-  <!-- Emblem disc -->
-  <circle cx="210" cy="190" r="130" fill="#0C0E12"/>
-  <circle cx="210" cy="190" r="126" fill="none" stroke="url(#bgold)" stroke-width="4"/>
-  <g clip-path="url(#bdisc)">
-    <!-- distressed flag stripes -->
-    <g fill="#F5F2EA" opacity=".13">
-      <path d="M84 104h224l-13 5-17-3-21 6-26-5-23 5-19-3-15 3H84z"/>
-      <path d="M84 138h238l-19 5-24-3-17 5-28-5-21 5-24-3-17 3H84z"/>
-      <path d="M84 172h250l-15 5-23-3-19 5-30-5-19 5-26-3-15 3H84z"/>
-      <path d="M84 206h246l-17 5-21-3-22 6-25-5-22 4-21-3-17 3H84z"/>
-      <path d="M84 240h234l-15 5-24-5-17 5-26-3-23 5-19-3-15 2H84z"/>
-      <path d="M84 274h216l-13 5-19-3-22 5-25-5-20 4-17-2H84z"/>
-    </g>
-    <g fill="#F5F2EA" opacity=".2">
-      <circle cx="112" cy="96" r="2.6"/><circle cx="134" cy="106" r="2.6"/><circle cx="156" cy="96" r="2.6"/>
-      <circle cx="122" cy="120" r="2.6"/><circle cx="146" cy="128" r="2.6"/><circle cx="108" cy="140" r="2.6"/>
-      <circle cx="168" cy="118" r="2.6"/>
-    </g>
-    <!-- ground -->
-    <path d="M84 268q42-11 84-8t88 4q26-2 46 4l12 4v46H84z" fill="#080A0D"/>
-    <!-- battlefield cross -->
-    <g fill="#F5F2EA">
-      <path d="M232 250h13l4 15h11q6 0 6 6v2h-37l2-17z"/>
-      <path d="M255 250h13l4 15h9q6 0 6 6v2h-35l2-17z"/>
-      <rect x="249" y="145" width="8" height="108" rx="3"/>
-      <path d="M243 122l19-4 4 11-8 19h-11l-8-15z"/>
-      <path d="M257 202l15 8-4 11-15-6z"/>
-      <path d="M232 115a21 15 0 0 1 42 0l2 6h-46z"/>
-      <path d="M249 152l-9 15 2 8 5-2 6-17z" opacity=".9"/>
-    </g>
-    <!-- kneeling soldier -->
-    <g fill="#F5F2EA">
-      <path d="M138 156a14 11 0 0 1 26 4l-2 5h-24z"/>
-      <path d="M134 172q15-4 26 4l11 15-5 30-15 8-11-4-11-26z"/>
-      <path d="M156 187l23 15-4 9-22-11z"/>
-      <path d="M143 220l26 4 4 15-11 6-19-4-7-13z"/>
-      <path d="M165 239l8 15h11l2 9h-27l-6-20z"/>
-      <path d="M128 224l8 22-15 11-11-2 4-11 7-6z"/>
-    </g>
+<!-- distressed flag sash, clipped inside badge, low opacity -->
+<g clip-path="url(#circleClip)" opacity="0.14">
+  <g transform="rotate(-24 200 200)">
+    <rect x="-40" y="120" width="480" height="18" fill="#E8BC55"/>
+    <rect x="-40" y="150" width="480" height="18" fill="#F5F2EA"/>
+    <rect x="-40" y="180" width="480" height="18" fill="#E8BC55"/>
+    <rect x="-40" y="210" width="480" height="18" fill="#F5F2EA"/>
+    <rect x="-40" y="240" width="480" height="18" fill="#E8BC55"/>
+    <polygon points="-40,120 60,120 44,138 -40,138" fill="#0C0E12"/>
+    <polygon points="440,258 320,258 336,240 440,240" fill="#0C0E12"/>
   </g>
+</g>
 
-  <!-- JOHN 15:13 banner -->
-  <g>
-    <path d="M96 330l114-14 114 14-10 30-104-12-104 12z" fill="url(#bgold)"/>
-    <text x="210" y="342" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="24" font-weight="700" letter-spacing="5" fill="#15181D">JOHN 15:13</text>
-  </g>
+<!-- scattered stars, top field -->
+<g fill="#E8BC55" opacity="0.9">
+  <path transform="translate(148,86) scale(0.9)" d="M6 0 L7.8 4.2 L12 4.6 L8.8 7.4 L9.8 11.6 L6 9.2 L2.2 11.6 L3.2 7.4 L0 4.6 L4.2 4.2 Z"/>
+  <path transform="translate(200,74) scale(1.05)" d="M6 0 L7.8 4.2 L12 4.6 L8.8 7.4 L9.8 11.6 L6 9.2 L2.2 11.6 L3.2 7.4 L0 4.6 L4.2 4.2 Z"/>
+  <path transform="translate(252,86) scale(0.9)" d="M6 0 L7.8 4.2 L12 4.6 L8.8 7.4 L9.8 11.6 L6 9.2 L2.2 11.6 L3.2 7.4 L0 4.6 L4.2 4.2 Z"/>
+</g>
 
-  <!-- Services -->
-  <text x="210" y="398" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="21" font-weight="600" letter-spacing="3.5" fill="#F5F2EA">DRYWALL · TEXTURE · STUCCO</text>
-  <text x="210" y="426" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="21" font-weight="600" letter-spacing="3.5" fill="#F5F2EA">PAINT · FRAMING · TRIM</text>
+<!-- arc wordmark -->
+<text font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="30" letter-spacing="5" fill="#E8BC55">
+  <textPath href="#arcTop" startOffset="50%" text-anchor="middle">VETERAN DRYWALL</textPath>
+</text>
 
-  <rect x="120" y="444" width="180" height="2" fill="#D9A62E" opacity=".7"/>
+<!-- ground line -->
+<rect x="118" y="308" width="164" height="4" rx="2" fill="#D9A62E" opacity="0.55"/>
 
-  <!-- Phone -->
-  <text x="210" y="486" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="34" font-weight="700" letter-spacing="2" fill="url(#bgold)">(941) 527-5924</text>
-  <!-- License -->
-  <text x="210" y="518" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="16" font-weight="500" letter-spacing="3" fill="#F5F2EA" opacity=".8">LICENSED &amp; INSURED · LIC # SCC131152687</text>
-  <text x="210" y="540" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-size="15" font-weight="500" letter-spacing="3" fill="#D9A62E">NORTH PORT, FL · VETERAN OWNED &amp; OPERATED</text>
+<!-- battlefield cross: rifle, bayonet, cross-guard, dog tags, helmet -->
+<g fill="url(#goldFade)">
+  <polygon points="201,158 209,158 213,178 197,178"/>
+  <rect x="200" y="176" width="9" height="130" rx="2"/>
+  <rect x="188" y="204" width="34" height="7" rx="2"/>
+  <circle cx="204.5" cy="220" r="4" opacity="0.9"/>
+  <circle cx="204.5" cy="230" r="4" opacity="0.9"/>
+  <path d="M204.5 224 L206.5 234 L202.5 234 Z" opacity="0.9"/>
+  <ellipse cx="204.5" cy="168" rx="17" ry="11"/>
+  <rect x="187" y="166" width="35" height="5" rx="2.5"/>
+</g>
+
+<!-- boots -->
+<g fill="url(#goldFade)">
+  <path d="M172,292 L196,292 L196,306 L166,306 C164,300 166,294 172,292 Z"/>
+  <path d="M238,292 L214,292 L214,306 L244,306 C246,300 244,294 238,292 Z"/>
+</g>
+
+<!-- kneeling soldier silhouette (bowed head, one knee down) -->
+<g fill="url(#goldFade)">
+  <circle cx="151" cy="196" r="13"/>
+  <path d="M144,206
+           C130,212 122,228 123,248
+           C124,266 130,284 138,300
+           L168,300
+           C170,278 168,252 160,232
+           C156,222 152,212 144,206 Z"/>
+  <path d="M120,262 C112,270 108,282 112,300 L134,300 C130,286 128,272 128,262 Z"/>
+</g>
+
+<!-- lower ribbon banner -->
+<path d="M96,332 L304,332 L288,356 L200,368 L112,356 Z" fill="#0C0E12" stroke="#D9A62E" stroke-width="2"/>
+<text x="200" y="352" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="21" letter-spacing="2" fill="#E8BC55">JOHN 15:13</text>
+
+<!-- small base text -->
+<text x="200" y="392" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="13" letter-spacing="3" fill="#F5F2EA" opacity="0.8">USMC VETERAN OWNED</text>
 </svg>

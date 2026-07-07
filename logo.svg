@@ -1,73 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Veteran Drywall LLC">
-  <!-- ============ HORIZONTAL LOGO — header/footer use ============
-       Emblem left: distressed flag disc + kneeling soldier before battlefield cross
-       Wordmark right: VETERAN DRYWALL / tagline / JOHN 15:13
-       Colors: charcoal #15181D · gold #D9A62E/#E8BC55 · off-white #F5F2EA -->
-  <defs>
-    <clipPath id="disc"><circle cx="80" cy="80" r="66"/></clipPath>
-    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#E8BC55"/><stop offset="1" stop-color="#D9A62E"/>
-    </linearGradient>
-  </defs>
+<svg viewBox="0 0 860 216" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Veteran Drywall LLC">
+<defs>
+  <linearGradient id="goldFadeH" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#E8BC55"/>
+    <stop offset="100%" stop-color="#D9A62E"/>
+  </linearGradient>
+</defs>
 
-  <!-- Emblem -->
-  <circle cx="80" cy="80" r="70" fill="#15181D"/>
-  <circle cx="80" cy="80" r="66" fill="none" stroke="url(#gold)" stroke-width="3"/>
-  <g clip-path="url(#disc)">
-    <!-- distressed flag stripes (rough right edges) -->
-    <g fill="#F5F2EA" opacity=".14">
-      <path d="M8 34h118l-7 3-9-2-11 4-14-3-12 3-10-2-8 2H8z"/>
-      <path d="M8 52h126l-10 3-13-2-9 3-15-3-11 3-13-2-9 2H8z"/>
-      <path d="M8 70h132l-8 3-12-2-10 3-16-3-10 3-14-2-8 2H8z"/>
-      <path d="M8 88h130l-9 3-11-2-12 4-13-3-12 2-11-2-9 2H8z"/>
-      <path d="M8 106h124l-8 3-13-3-9 3-14-2-12 3-10-2-8 1H8z"/>
-      <path d="M8 124h114l-7 3-10-2-12 3-13-3-11 2-9-1H8z"/>
-    </g>
-    <!-- canton stars -->
-    <g fill="#F5F2EA" opacity=".22">
-      <circle cx="24" cy="30" r="1.6"/><circle cx="36" cy="36" r="1.6"/><circle cx="48" cy="30" r="1.6"/>
-      <circle cx="30" cy="44" r="1.6"/><circle cx="42" cy="48" r="1.6"/><circle cx="22" cy="56" r="1.6"/>
-    </g>
-    <!-- ground -->
-    <path d="M14 122q22-6 44-4t46 2q14-1 24 2l6 2v24H14z" fill="#0C0E12"/>
-    <!-- battlefield cross: inverted rifle in boots, helmet on stock -->
-    <g fill="#F5F2EA">
-      <!-- boots -->
-      <path d="M92 112h7l2 8h6q3 0 3 3v1H90l1-9z"/>
-      <path d="M104 112h7l2 8h5q3 0 3 3v1h-19l1-9z"/>
-      <!-- rifle (inverted, barrel down between boots) -->
-      <rect x="101" y="56" width="4" height="58" rx="1.5"/>
-      <!-- stock at top -->
-      <path d="M98 44l10-2 2 6-4 10h-6l-4-8z"/>
-      <!-- magazine -->
-      <path d="M105 86l8 4-2 6-8-3z"/>
-      <!-- helmet resting on stock -->
-      <path d="M92 40a11 8 0 0 1 22 0l1 3H91z"/>
-      <!-- dog tags -->
-      <path d="M101 60l-5 8 1 4 3-1 3-9z" opacity=".9"/>
-    </g>
-    <!-- kneeling soldier (facing cross) -->
-    <g fill="#F5F2EA">
-      <!-- helmeted head, bowed -->
-      <path d="M52 62a7.5 6 0 0 1 14 2l-1 3H52z"/>
-      <!-- torso leaning forward -->
-      <path d="M50 70q8-2 14 2l6 8-3 16-8 4-6-2-6-14z"/>
-      <!-- arm resting on raised knee -->
-      <path d="M62 78l12 8-2 5-12-6z"/>
-      <!-- raised knee leg -->
-      <path d="M55 96l14 2 2 8-6 3-10-2-4-7z"/>
-      <path d="M67 106l4 8h6l1 5H64l-3-11z"/>
-      <!-- kneeling leg -->
-      <path d="M47 98l4 12-8 6-6-1 2-6 4-3z"/>
-    </g>
-  </g>
+<!-- emblem -->
+<circle cx="108" cy="108" r="100" fill="none" stroke="url(#goldFadeH)" stroke-width="4"/>
+<circle cx="108" cy="108" r="90" fill="#0C0E12" stroke="#D9A62E" stroke-width="1"/>
 
-  <!-- Wordmark -->
-  <g font-family="'Barlow Condensed','Arial Narrow',sans-serif">
-    <text x="168" y="74" font-size="52" font-weight="700" letter-spacing="3" fill="#15181D">VETERAN</text>
-    <text x="392" y="74" font-size="52" font-weight="700" letter-spacing="3" fill="url(#gold)">DRYWALL</text>
-    <rect x="170" y="86" width="300" height="2" fill="#D9A62E"/>
-    <text x="170" y="112" font-size="17" font-weight="500" letter-spacing="4.5" fill="#15181D" opacity=".85">DRYWALL · STUCCO · PAINT · TRIM</text>
-    <text x="170" y="138" font-size="15" font-weight="600" letter-spacing="6" fill="#D9A62E">VETERAN OWNED — JOHN 15:13</text>
-  </g>
+<!-- rifle / battlefield cross -->
+<g fill="url(#goldFadeH)">
+  <polygon points="105,58 112,58 115,74 102,74"/>
+  <rect x="104" y="72" width="7" height="76" rx="2"/>
+  <rect x="95" y="92" width="24" height="6" rx="2"/>
+  <ellipse cx="107.5" cy="60" rx="12" ry="8"/>
+  <rect x="95" y="59" width="25" height="4" rx="2"/>
+</g>
+<g fill="url(#goldFadeH)">
+  <path d="M90,150 L108,150 L108,160 L84,160 C82,155 84,151 90,150 Z"/>
+  <path d="M126,150 L108,150 L108,160 L132,160 C134,155 132,151 126,150 Z"/>
+</g>
+
+<!-- kneeling soldier silhouette -->
+<g fill="url(#goldFadeH)">
+  <circle cx="70" cy="98" r="9"/>
+  <path d="M65,105
+           C55,109 49,120 50,134
+           C51,146 55,158 61,168
+           L82,168
+           C83,152 82,134 76,120
+           C73,113 70,107 65,105 Z"/>
+</g>
+
+<!-- wordmark -->
+<text x="238" y="100" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="62" letter-spacing="2" fill="#F5F2EA">VETERAN</text>
+<text x="238" y="160" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="62" letter-spacing="2" fill="#E8BC55">DRYWALL</text>
+<text x="240" y="188" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="22" letter-spacing="4" fill="#F5F2EA" opacity="0.75">LLC · USMC VETERAN OWNED</text>
 </svg>
