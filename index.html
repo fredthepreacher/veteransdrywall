@@ -286,9 +286,27 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 .why .verse{border-left:3px solid var(--gold);padding:14px 20px;background:rgba(232,188,85,.06);font-style:italic;color:var(--gold-2);border-radius:0 8px 8px 0;margin:24px 0}
 .why .verse small{display:block;font-style:normal;font-family:var(--head);letter-spacing:3px;margin-top:6px;color:rgba(245,242,234,.6)}
 .why-photo{position:relative}
+
+/* FINAL BORDER-TO-BORDER PORTRAIT BOX FIX
+   The portrait images are already full-body vertical photos. Do not force them into a taller/wider artificial box.
+   Let the actual image dimensions control the frame so the photo reaches the borders with no black side/bottom gaps. */
+.why-photo{display:flex;justify-content:center;align-items:center}
+.why-photo picture{display:block;width:min(100%,460px);line-height:0;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.why-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);object-fit:initial;object-position:center center;background:none;box-shadow:none}
+.team .grid{grid-template-columns:repeat(3,minmax(240px,1fr));max-width:1120px;gap:28px;align-items:start}
+.member{display:flex;flex-direction:column;align-items:center;text-align:center}
+.member-frame{width:100%;max-width:360px;height:auto;aspect-ratio:auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:transparent;transition:transform .3s ease;padding:0;line-height:0}
+.member-frame picture{display:block;width:100%;height:auto;margin:0;line-height:0}
+.member-frame img{display:block;width:100%;height:auto;object-fit:initial;object-position:center center;border-radius:0}
+.member h3{width:100%}
+@media(min-width:481px) and (max-width:1024px){.team .grid{grid-template-columns:repeat(3,1fr);gap:18px}.member-frame{max-width:320px}}
+@media(max-width:700px){.why-photo picture{width:min(100%,380px)}}
+@media(max-width:480px){.team .grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}.member-frame{max-width:340px}}
+
+
 /* object-fit:contain guarantees the full person/photo and background is always visible — no crop possible.
    The gradient fills any letterbox space so it still reads as an intentional portrait frame. */
-.why-photo img{border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,.5);aspect-ratio:2/3;max-height:760px;object-fit:contain;object-position:center top;width:100%;background:radial-gradient(circle at 50% 20%,rgba(217,166,46,.12),transparent 46%),rgba(245,242,234,.04)}
+
 .why-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--gold);border-radius:var(--radius);z-index:-1;opacity:.5}
 /* Light variant — keeps dark sections from stacking back-to-back (Priority → Why Us → Standard → Veteran Story → Water Damage now alternates dark/light/dark/light/dark) */
 .why.story-light{background:var(--paper-2);color:var(--ink)}
@@ -299,17 +317,17 @@ header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.35)}
 /* ---------- Team ---------- */
 .team{background:var(--ink);color:var(--paper);border-top:1px solid rgba(245,242,234,.1)}
 .team h2{color:var(--paper)}
-.team .grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:900px}
-@media(min-width:481px) and (max-width:1024px){.team .grid{grid-template-columns:repeat(3,1fr);gap:16px}}
-@media(max-width:480px){.team .grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
+
+
+
 .member{text-align:center}
 /* Full-portrait "zoomed out" frame: object-fit:contain guarantees the whole person + background
    is always visible (no cropping possible), with a soft gold/dark gradient filling any letterbox
    space so it reads as an intentional portrait frame rather than empty space. */
-.member-frame{width:100%;height:clamp(460px,48vw,680px);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:radial-gradient(circle at 50% 18%,rgba(217,166,46,.14),transparent 42%),linear-gradient(180deg,rgba(245,242,234,.06),rgba(12,14,18,.46));transition:transform .3s ease;padding:10px}
-.member-frame img{width:100%;height:100%;object-fit:contain;object-position:center top;display:block}
+
+
 .member:hover .member-frame{transform:scale(1.02)}
-@media(max-width:480px){.member-frame{height:clamp(420px,110vw,620px);padding:8px}}
+
 .member h3{font-size:26px;margin:14px 0 2px;color:var(--paper)}
 .member span{font-family:var(--head);font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-2)}
 
@@ -717,8 +735,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     </div>
     <div class="why-photo reveal">
       <picture>
-        <source type="image/webp" srcset="assets/images/webp/steven-mcpherson-veteran-drywall-owner.webp">
-        <img src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg" alt="Steven McPherson owner of Veteran Drywall standing outdoors" loading="lazy" width="490" height="450">
+        <source type="image/webp" srcset="assets/images/team/steven-mcpherson-full-body-portrait-fill.webp">
+        <img src="assets/images/team/steven-mcpherson-full-body-portrait-fill.jpg" alt="Steven McPherson owner of Veteran Drywall standing outdoors" loading="lazy" width="490" height="450">
       </picture>
     </div>
   </div>
@@ -842,8 +860,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="member reveal">
         <div class="member-frame">
           <picture>
-            <source type="image/webp" srcset="assets/images/webp/steven-mcpherson-veteran-drywall-owner.webp">
-            <img loading="lazy" width="1024" height="1536" alt="Steven McPherson owner of Veteran Drywall standing outdoors" src="assets/images/jpg-fallbacks/steven-mcpherson-veteran-drywall-owner.jpg">
+            <source type="image/webp" srcset="assets/images/team/steven-mcpherson-full-body-portrait-fill.webp">
+            <img loading="lazy" width="1024" height="1536" alt="Steven McPherson owner of Veteran Drywall standing outdoors" src="assets/images/team/steven-mcpherson-full-body-portrait-fill.jpg">
           </picture>
         </div>
         <h3>Steven McPherson</h3><span>Owner · USMC Veteran</span>
@@ -851,8 +869,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="member reveal">
         <div class="member-frame">
           <picture>
-            <source type="image/webp" srcset="assets/images/webp/mike-veteran-drywall-finisher.webp">
-            <img loading="lazy" width="1024" height="1536" alt="Mike from Veteran Drywall team standing outdoors" src="assets/images/jpg-fallbacks/mike-veteran-drywall-finisher.jpg">
+            <source type="image/webp" srcset="assets/images/team/mike-veteran-drywall-full-body-portrait-fill.webp">
+            <img loading="lazy" width="1024" height="1536" alt="Mike from Veteran Drywall team standing outdoors" src="assets/images/team/mike-veteran-drywall-full-body-portrait-fill.jpg">
           </picture>
         </div>
         <h3>Mike</h3><span>Veteran Drywall Team</span>
@@ -860,8 +878,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="member reveal">
         <div class="member-frame">
           <picture>
-            <source type="image/webp" srcset="assets/images/webp/rick-veteran-drywall-finisher.webp">
-            <img loading="lazy" width="1024" height="1536" alt="Rick from Veteran Drywall team standing outdoors" src="assets/images/jpg-fallbacks/rick-veteran-drywall-finisher.jpg">
+            <source type="image/webp" srcset="assets/images/team/rick-veteran-drywall-full-body-portrait-fill.webp">
+            <img loading="lazy" width="1024" height="1536" alt="Rick from Veteran Drywall team standing outdoors" src="assets/images/team/rick-veteran-drywall-full-body-portrait-fill.jpg">
           </picture>
         </div>
         <h3>Rick</h3><span>Veteran Drywall Team</span>
