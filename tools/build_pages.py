@@ -12,7 +12,7 @@ from content import *  # noqa
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 BUILD_DATE = '2026-09-25'
-V = 'v11'
+V = 'v12'
 CSS = f'/assets/css/site-{V}.css'
 JS = f'/assets/js/site-{V}.js'
 e = html.escape
@@ -207,7 +207,7 @@ def header(active=''):
 </div>
 '''
 
-def cta_band(title='Ready to make that damage disappear?', text='Free written estimate. Send photos and get a straight answer from a local, veteran-owned crew.', service=''):
+def cta_band(title='Ready to make that damage <span class="splash navy">disappear?</span>', text='Free written estimate. Send photos and get a straight answer from a local, veteran-owned crew.', service=''):
     ds = f' data-service="{e(service)}"' if service else ''
     href = '/free-estimate/' + (f'?service={service.replace(" ", "+")}' if service else '')
     return f'''<section class="section-tight"><div class="wrap">
@@ -388,7 +388,7 @@ def city_page(c):
   <div class="section-head"><span class="eyebrow">Also serving</span><h2 class="h-md">Other cities we cover</h2></div>
   <div class="related">{other}</div>
 </div></section>
-''' + cta_band(title=f'Drywall damage in {e(c["name"])}? Let’s fix it.') + '</main>\n' + footer()
+''' + cta_band(title=f'Drywall damage in {e(c["name"])}? <span class="splash navy">Let’s fix it.</span>') + '</main>\n' + footer()
     write(path, body)
 
 def quote_form(heading_level='h2'):
@@ -472,7 +472,7 @@ def quote_section(dark=True, htag='h2'):
   <div class="wrap quote-shell">
     <div>
       <span class="eyebrow on-dark">Free estimate · 60 seconds</span>
-      <{htag} class="h-lg">Tell us what's wrong. <span class="hl">We'll make it right.</span></{htag}>
+      <{htag} class="h-lg">Tell us what's wrong. <span class="hl drip">We'll make it right.</span></{htag}>
       <p class="lede">Four quick taps and a photo or two. Most estimates come back within one business day — and Steven answers his own phone if you'd rather talk.</p>
       <ul class="contact-list">
         <li><a href="tel:{BIZ['phone_e164']}"><span class="ci">{ic('phone')}</span><span>{BIZ['phone']}<small>Call or text · main line</small></span></a></li>

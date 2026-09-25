@@ -22,7 +22,7 @@ def home_page(x):
     ic, e = x['ic'], x['e']
     nodes = x['webpage_node']('/', HOME_TITLE, HOME_DESC, None)
     nodes.append(x['faq_node']('/', GENERAL_FAQS[:8]))
-    preload = '<link rel="preload" as="image" href="/assets/images/webp/veteran-drywall-crew-mobile-900x1200.webp" type="image/webp" fetchpriority="high">\n'
+    preload = '<link rel="preload" href="/assets/fonts/permanent-marker.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" as="image" href="/assets/images/webp/veteran-drywall-crew-mobile-900x1200.webp" type="image/webp" fetchpriority="high">\n'
     out = x['head']('/', HOME_TITLE, HOME_DESC, x['graph'](nodes), preload=preload) + x['header']()
 
     tiles = ''.join(f'<button class="ptile{" " if True else ""}" type="button" data-key="{k}" aria-pressed="{"true" if i == 0 else "false"}">{ic(icn)}<b>{e(lbl)}</b></button>' for i, (k, lbl, icn) in enumerate(PICKER_ORDER))
@@ -51,7 +51,7 @@ def home_page(x):
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow on-dark">USMC veteran owned · North Port, FL</span>
-      <h1 class="split-words">Drywall repair in North Port that <span class="hl">disappears.</span></h1>
+      <h1 class="split-words">Drywall repair in&nbsp;North&nbsp;Port that <span class="splash">disappears.</span></h1>
       <p class="sub">Holes, cracks, water-stained ceilings, popcorn and full remodels — patched, <strong style="color:#fff">texture-matched</strong> and finished by a Marine-led crew across Sarasota &amp; Charlotte County.</p>
       <div class="ticker" aria-hidden="true"><span class="pulse-dot"></span><span class="tk-label">Now fixing:</span><span class="tk-word" data-words="doorknob holes|ceiling stains|storm damage|popcorn ceilings|knockdown texture|nail pops">doorknob holes</span></div>
       <div class="btn-row">
@@ -119,7 +119,7 @@ def home_page(x):
   <div class="wrap lab">
     <div>
       <span class="eyebrow on-dark">Texture lab</span>
-      <h2 class="h-lg">Drag it. Watch the patch <span class="hl">disappear.</span></h2>
+      <h2 class="h-lg">Drag it. Watch the patch <span class="hl drip">disappear.</span></h2>
       <p class="lede">A patch without texture sticks out like a sore thumb. Pick your texture and slide to see the difference a proper match makes.</p>
       <div class="tex-tabs" role="tablist" aria-label="Choose a texture">
         <button class="tex-tab" role="tab" type="button" data-tex="knockdown" aria-selected="true">Knockdown</button>
@@ -225,7 +225,7 @@ def home_page(x):
   <div class="wrap split">
     <div>
       <span class="eyebrow on-dark">Property managers · landlords · realtors</span>
-      <h2 class="h-lg">Turnovers done. <span class="hl">Units rent-ready.</span></h2>
+      <h2 class="h-lg">Turnovers done. <span class="hl drip">Units rent-ready.</span></h2>
       <p class="lede">Tenant damage, move-out punch lists, listing prep and inspection items — one reliable crew that communicates and documents.</p>
       <ul class="checklist cols"><li>Tenant damage</li><li>Move-out repairs</li><li>Listing prep</li><li>Inspection items</li><li>Ceiling stains</li><li>Before/after photos</li></ul>
       <div class="btn-row" style="margin-top:26px"><a class="btn btn-gold" href="/free-estimate/?service=Property+Manager+%2F+Realtor+%2F+Landlord+Service" data-quote data-service="Property Manager / Realtor / Landlord Service">Send my punch list</a><a class="link-arrow" href="/property-managers/">How it works</a></div>
@@ -467,7 +467,7 @@ def thanks_page(x):
     path = '/thank-you/'
     ic = x['ic']
     body = f'''<main id="main"><section class="hero" style="min-height:70vh;display:flex;align-items:center"><div class="wrap center" style="position:relative">
-<div style="font-size:72px">🎖️</div><h1 class="h-xl">Request received. <span class="hl">We’re on it.</span></h1>
+<div style="font-size:72px">🎖️</div><h1 class="h-xl">Request received. <span class="splash">We’re on it.</span></h1>
 <p class="sub" style="margin:18px auto 0">Thanks for reaching out to Veteran Drywall. Expect a call, text or email — usually within one business day.</p>
 <div class="btn-row" style="justify-content:center;margin-top:28px"><a class="btn btn-gold btn-lg" href="tel:{BIZ['phone_e164']}">{ic('phone')} Need it faster? Call {BIZ['phone']}</a><a class="btn btn-outline btn-lg" href="/">Back to home</a></div>
 </div></section></main>
@@ -476,7 +476,7 @@ def thanks_page(x):
 
 def notfound_page(x):
     body = '''<main id="main"><section class="hero" style="min-height:70vh;display:flex;align-items:center"><div class="wrap center" style="position:relative">
-<h1 class="h-xl" style="font-size:clamp(90px,16vw,180px);color:var(--gold)">404</h1><h2 class="h-md">This wall doesn’t exist.</h2>
+<h1 class="h-xl" style="font-size:clamp(90px,16vw,180px);color:var(--gold)"><span class="drip">404</span></h1><h2 class="h-md">This wall doesn’t exist.</h2>
 <p class="sub" style="margin:16px auto 0">The page was moved, removed, or never hung in the first place.</p>
 <div class="btn-row" style="justify-content:center;margin-top:26px"><a class="btn btn-gold btn-lg" href="/">Back to home</a><a class="btn btn-outline btn-lg" href="/free-estimate/">Free estimate</a></div>
 </div></section></main>
